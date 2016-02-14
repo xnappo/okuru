@@ -18,7 +18,7 @@ define(['./spotlight', 'focusManager'], function (spotlight, focusManager) {
                 parentContainer: section,
                 itemsContainer: section.querySelector('.itemsContainer'),
                 shape: 'backdropCard',
-                rows: 3,
+                rows: 1,
                 width: XnappoTheme.CardBuilder.homeThumbWidth,
                 preferThumb: true,
                 addImageData: true
@@ -30,7 +30,7 @@ define(['./spotlight', 'focusManager'], function (spotlight, focusManager) {
 
         var options = {
 
-            Limit: 18,
+            Limit: 50,
             ParentId: parentId
         };
 
@@ -42,7 +42,7 @@ define(['./spotlight', 'focusManager'], function (spotlight, focusManager) {
                 parentContainer: section,
                 itemsContainer: section.querySelector('.itemsContainer'),
                 shape: 'backdropCard',
-                rows: 3,
+                rows: 1,
                 width: XnappoTheme.CardBuilder.homeThumbWidth,
                 preferThumb: true,
                 addImageData: true
@@ -55,7 +55,7 @@ define(['./spotlight', 'focusManager'], function (spotlight, focusManager) {
         var options = {
 
             IncludeItemTypes: "Episode",
-            Limit: 12,
+            Limit: 50,
             Fields: "PrimaryImageAspectRatio",
             ParentId: parentId,
             ImageTypeLimit: 1,
@@ -70,7 +70,7 @@ define(['./spotlight', 'focusManager'], function (spotlight, focusManager) {
                 parentContainer: section,
                 itemsContainer: section.querySelector('.itemsContainer'),
                 shape: 'backdropCard',
-                rows: 3,
+                rows: 1,
                 width: XnappoTheme.CardBuilder.homeThumbWidth,
                 preferThumb: true,
                 showGroupCount: true
@@ -140,33 +140,33 @@ define(['./spotlight', 'focusManager'], function (spotlight, focusManager) {
         self.loadData = function () {
 
             return Promise.all([
-            loadResume(element, parentId),
+            //loadResume(element, parentId),
             loadNextUp(element, parentId),
             loadLatest(element, parentId)
             ]);
         };
 
-        loadSpotlight(element, parentId);
-        loadImages(element, parentId);
+        //loadSpotlight(element, parentId);
+        //loadImages(element, parentId);
 
-        element.querySelector('.allSeriesCard').addEventListener('click', function () {
-            Emby.Page.show(Emby.PluginManager.mapPath('xnappotheme', 'tv/tv.html?parentid=' + parentId));
-        });
+        //element.querySelector('.allSeriesCard').addEventListener('click', function () {
+        //    Emby.Page.show(Emby.PluginManager.mapPath('xnappotheme', 'tv/tv.html?parentid=' + parentId));
+        //});
 
-        element.querySelector('.tvUpcomingCard').addEventListener('click', function () {
-            Emby.Page.show(Emby.PluginManager.mapPath('xnappotheme', 'tv/tv.html?tab=upcoming&parentid=' + parentId));
-        });
+        //element.querySelector('.tvUpcomingCard').addEventListener('click', function () {
+        //    Emby.Page.show(Emby.PluginManager.mapPath('xnappotheme', 'tv/tv.html?tab=upcoming&parentid=' + parentId));
+        //});
 
-        element.querySelector('.tvFavoritesCard').addEventListener('click', function () {
-            Emby.Page.show(Emby.PluginManager.mapPath('xnappotheme', 'tv/tv.html?tab=favorites&parentid=' + parentId));
-        });
+        //element.querySelector('.tvFavoritesCard').addEventListener('click', function () {
+        //    Emby.Page.show(Emby.PluginManager.mapPath('xnappotheme', 'tv/tv.html?tab=favorites&parentid=' + parentId));
+        //});
 
         self.destroy = function () {
 
         };
 
         bindFlipEvents(element.querySelector('.nextUpSection'));
-        bindFlipEvents(element.querySelector('.resumeSection'));
+        //bindFlipEvents(element.querySelector('.resumeSection'));
     }
 
     function bindFlipEvents(element) {
