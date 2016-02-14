@@ -31,7 +31,7 @@ define(['playbackManager', 'pluginManager'], function (playbackManager, pluginMa
 
         var self = this;
 
-        self.name = 'Default Theme';
+        self.name = 'Okuru Theme';
         self.type = 'theme';
         self.id = 'xnappotheme';
 
@@ -195,7 +195,7 @@ define(['playbackManager', 'pluginManager'], function (playbackManager, pluginMa
                 type: 'settings',
                 category: 'Display',
                 thumbImage: '',
-                title: 'Default Theme'
+                title: 'Okuru Theme'
             });
 
             return routes;
