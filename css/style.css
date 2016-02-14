@@ -145,18 +145,8 @@ a {
         padding-top: 2.74vh;
     }
 
-.itemScrollFrame2.scrollFrameX {
-    overflow: hidden;
-    padding-bottom: 3vh;
-    padding-top: 3vh;
-}
-
-    .itemScrollFrame2.scrollFrameX.noTopPadding {
-        padding-top: 2.74vh;
-    }    
-    
 .tabbedPageContainer {
-    top: 5%;
+    top: 45%;
     align-items: initial;
     justify-content: initial;
 }

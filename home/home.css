@@ -2,3 +2,7 @@
     width: 100%;
 }
 
+    .wideSpotlightCard .cardImageContainer {
+        width: auto !important;
+        height: 44.26vh;
+    }
