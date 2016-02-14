@@ -1,6 +1,8 @@
 define(['focusManager'], function (focusManager) {
 
-    function loadLatestRecordings(element) {
+    var themeId = 'okuru';
+	
+	function loadLatestRecordings(element) {
 
         return Emby.Models.liveTvRecordings({
 
@@ -11,11 +13,11 @@ define(['focusManager'], function (focusManager) {
 
             var section = element.querySelector('.latestRecordingsSection');
 
-            XnappoTheme.CardBuilder.buildCards(result.Items, {
+            Okuru.CardBuilder.buildCards(result.Items, {
                 parentContainer: section,
                 itemsContainer: section.querySelector('.itemsContainer'),
                 shape: 'autoHome',
-                width: XnappoTheme.CardBuilder.homePortraitWidth
+                width: Okuru.CardBuilder.homePortraitWidth
             });
         });
     }
@@ -32,11 +34,11 @@ define(['focusManager'], function (focusManager) {
 
             var section = element.querySelector('.nowPlayingSection');
 
-            XnappoTheme.CardBuilder.buildCards(result.Items, {
+            Okuru.CardBuilder.buildCards(result.Items, {
                 parentContainer: section,
                 itemsContainer: section.querySelector('.itemsContainer'),
                 shape: 'autoHome',
-                width: XnappoTheme.CardBuilder.homePortraitWidth,
+                width: Okuru.CardBuilder.homePortraitWidth,
                 coverImage: true
             });
         });
@@ -46,11 +48,11 @@ define(['focusManager'], function (focusManager) {
 
         return Emby.Models.liveTvRecommendedPrograms(options).then(function (result) {
 
-            XnappoTheme.CardBuilder.buildCards(result.Items, {
+            Okuru.CardBuilder.buildCards(result.Items, {
                 parentContainer: section,
                 itemsContainer: section.querySelector('.itemsContainer'),
                 shape: 'autoHome',
-                width: XnappoTheme.CardBuilder.homePortraitWidth,
+                width: Okuru.CardBuilder.homePortraitWidth,
                 coverImage: true
             });
         });
@@ -58,7 +60,7 @@ define(['focusManager'], function (focusManager) {
 
     function gotoTvView(tab, parentId) {
 
-        Emby.Page.show(Emby.PluginManager.mapPath('xnappotheme', 'livetv/livetv.html?tab=' + tab));
+        Emby.Page.show(Emby.PluginManager.mapRoute(themeId, 'livetv/livetv.html?tab=' + tab));
     }
 
     function view(element, parentId, autoFocus) {
@@ -116,7 +118,7 @@ define(['focusManager'], function (focusManager) {
         };
 
         element.querySelector('.guideCard').addEventListener('click', function () {
-            Emby.Page.show(Emby.PluginManager.mapPath('xnappotheme', 'livetv/guide.html'));
+            Emby.Page.show(Emby.PluginManager.mapRoute(themeId, 'livetv/guide.html'));
         });
 
         element.querySelector('.recordingsCard').addEventListener('click', function () {

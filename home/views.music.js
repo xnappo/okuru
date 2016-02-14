@@ -1,6 +1,8 @@
 define([], function () {
 
-    function loadLatest(element, parentId) {
+    var themeId = 'okuru';
+	
+	function loadLatest(element, parentId) {
 
         var options = {
 
@@ -16,11 +18,11 @@ define([], function () {
 
             var section = element.querySelector('.latestSection');
 
-            XnappoTheme.CardBuilder.buildCards(result, {
+            Okuru.CardBuilder.buildCards(result, {
                 parentContainer: section,
                 itemsContainer: section.querySelector('.itemsContainer'),
                 shape: 'autoHome',
-                width: XnappoTheme.CardBuilder.homePortraitWidth
+                width: Okuru.CardBuilder.homePortraitWidth
             });
         });
     }
@@ -43,11 +45,11 @@ define([], function () {
 
             var section = element.querySelector('.playlistsSection');
 
-            XnappoTheme.CardBuilder.buildCards(result.Items, {
+            Okuru.CardBuilder.buildCards(result.Items, {
                 parentContainer: section,
                 itemsContainer: section.querySelector('.itemsContainer'),
                 shape: 'autoHome',
-                width: XnappoTheme.CardBuilder.homePortraitWidth,
+                width: Okuru.CardBuilder.homePortraitWidth,
                 showTitle: true
             });
         });
@@ -73,11 +75,11 @@ define([], function () {
 
             var section = element.querySelector('.recentlyPlayedSection');
 
-            XnappoTheme.CardBuilder.buildCards(result.Items, {
+            Okuru.CardBuilder.buildCards(result.Items, {
                 parentContainer: section,
                 itemsContainer: section.querySelector('.itemsContainer'),
                 shape: 'autoHome',
-                width: XnappoTheme.CardBuilder.homePortraitWidth,
+                width: Okuru.CardBuilder.homePortraitWidth,
                 action: 'instantmix'
             });
         });
@@ -103,11 +105,11 @@ define([], function () {
 
             var section = element.querySelector('.frequentlyPlayedSection');
 
-            XnappoTheme.CardBuilder.buildCards(result.Items, {
+            Okuru.CardBuilder.buildCards(result.Items, {
                 parentContainer: section,
                 itemsContainer: section.querySelector('.itemsContainer'),
                 shape: 'autoHome',
-                width: XnappoTheme.CardBuilder.homePortraitWidth,
+                width: Okuru.CardBuilder.homePortraitWidth,
                 action: 'instantmix'
             });
         });
@@ -132,11 +134,11 @@ define([], function () {
 
             var section = element.querySelector('.favoriteSongsSection');
 
-            XnappoTheme.CardBuilder.buildCards(result.Items, {
+            Okuru.CardBuilder.buildCards(result.Items, {
                 parentContainer: section,
                 itemsContainer: section.querySelector('.itemsContainer'),
                 shape: 'autoHome',
-                width: XnappoTheme.CardBuilder.homePortraitWidth,
+                width: Okuru.CardBuilder.homePortraitWidth,
                 action: 'instantmix'
             });
         });
@@ -161,11 +163,11 @@ define([], function () {
 
             var section = element.querySelector('.favoriteAlbumsSection');
 
-            XnappoTheme.CardBuilder.buildCards(result.Items, {
+            Okuru.CardBuilder.buildCards(result.Items, {
                 parentContainer: section,
                 itemsContainer: section.querySelector('.itemsContainer'),
                 shape: 'autoHome',
-                width: XnappoTheme.CardBuilder.homePortraitWidth
+                width: Okuru.CardBuilder.homePortraitWidth
             });
         });
     }
@@ -188,18 +190,18 @@ define([], function () {
 
             var section = element.querySelector('.favoriteArtistsSection');
 
-            XnappoTheme.CardBuilder.buildCards(result.Items, {
+            Okuru.CardBuilder.buildCards(result.Items, {
                 parentContainer: section,
                 itemsContainer: section.querySelector('.itemsContainer'),
                 shape: 'autoHome',
-                width: XnappoTheme.CardBuilder.homePortraitWidth
+                width: Okuru.CardBuilder.homePortraitWidth
             });
         });
     }
 
     function gotoMusicView(tab, parentId) {
 
-        Emby.Page.show(Emby.PluginManager.mapPath('xnappotheme', 'music/music.html?tab=' + tab + "&parentid=" + parentId));
+        Emby.Page.show(Emby.PluginManager.mapRoute(themeId, 'music/music.html?tab=' + tab + "&parentid=" + parentId));
     }
 
     function view(element, parentId, autoFocus) {

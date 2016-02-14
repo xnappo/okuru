@@ -1,6 +1,6 @@
 {
-    "name": "xnappo.xnappotheme",
-    "displayName": "Xnappo Theme",
+    "name": "okuru",
+    "displayName": "Okuru",
     "version": "1.0.0",
     "description": "Xnappo Theme!",
     "plugin": "plugin.js",

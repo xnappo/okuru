@@ -1,6 +1,8 @@
 define(['playbackManager', 'datetime', './../components/backdrop', 'userdataButtons'], function (playbackManager, datetime, themeBackdrop, userdataButtons) {
 
-    return function (view, params) {
+    var themeId = 'okuru';
+	
+	return function (view, params) {
 
         var self = this;
         var currentPlayer;
@@ -20,7 +22,7 @@ define(['playbackManager', 'datetime', './../components/backdrop', 'userdataButt
 
                 themeBackdrop.setBackdrops([item]);
 
-                XnappoTheme.CardBuilder.buildCards([item], {
+                Okuru.CardBuilder.buildCards([item], {
                     shape: 'squareCard',
                     width: 640,
                     itemsContainer: view.querySelector('.nowPlayingCardContainer'),
@@ -315,7 +317,7 @@ define(['playbackManager', 'datetime', './../components/backdrop', 'userdataButt
 
         view.querySelector('.btnPlaylist').addEventListener('click', function () {
 
-            Emby.Page.show(Emby.PluginManager.mapPath('xnappotheme', 'nowplaying/playlist.html'));
+            Emby.Page.show(Emby.PluginManager.mapRoute(themeId, 'nowplaying/playlist.html'));
         });
 
         btnRepeat.addEventListener('click', function () {

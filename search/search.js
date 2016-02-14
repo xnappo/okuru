@@ -157,7 +157,7 @@ define(['loading', 'alphapicker', 'slyScroller', './../components/focushandler']
             cardOptions.shape = 'autoVertical';
             cardOptions.scalable = true;
 
-            XnappoTheme.CardBuilder.buildCards(items, cardOptions);
+            Okuru.CardBuilder.buildCards(items, cardOptions);
         }
 
         function initAlphaPicker(view) {

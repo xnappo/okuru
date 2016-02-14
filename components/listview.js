@@ -43,8 +43,8 @@ define(['itemHelper', 'mediaInfo', 'paper-icon-item', 'paper-item-body'], functi
             } else {
                 html += '<div class="paperIconItemImage" item-icon>';
             }
-            html += XnappoTheme.CardBuilder.getPlayedIndicator(item);
-            var progressHtml = XnappoTheme.CardBuilder.getProgressBarHtml(item);
+            html += Okuru.CardBuilder.getPlayedIndicator(item);
+            var progressHtml = Okuru.CardBuilder.getProgressBarHtml(item);
 
             if (progressHtml) {
                 html += progressHtml;

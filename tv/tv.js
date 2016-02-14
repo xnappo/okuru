@@ -1,5 +1,7 @@
 define(['loading', 'alphapicker', './../components/horizontallist', './../components/focushandler', './../components/tabbedpage', './../components/backdrop', 'focusManager'], function (loading, alphaPicker, horizontalList, focusHandler, tabbedPage, themeBackdrop, focusManager) {
 
+    var themeId = 'okuru';
+	
     return function(view, params) {
 
         var self = this;
@@ -145,7 +147,7 @@ define(['loading', 'alphapicker', './../components/horizontallist', './../compon
                     shape: 'backdropCard',
                     rows: 3,
                     preferThumb: true,
-                    width: XnappoTheme.CardBuilder.homeThumbWidth,
+                    width: Okuru.CardBuilder.homeThumbWidth,
                     indexBy: 'PremiereDate'
                 },
                 selectedItemInfoElement: page.querySelector('.selectedItemInfoInner'),
@@ -238,12 +240,12 @@ define(['loading', 'alphapicker', './../components/horizontallist', './../compon
 
         function renderFavorites(page, pageParams, autoFocus, slyFrame, resolve) {
 
-            fetch(Emby.PluginManager.mapUrl('xnappotheme', 'tv/views.favorites.html'), { mode: 'no-cors' }).then(function (response) {
+            fetch(Emby.PluginManager.mapUrl(themeId, 'tv/views.favorites.html'), { mode: 'no-cors' }).then(function (response) {
                 return response.text();
             }).then(function (html) {
 
                 var parent = page.querySelector('.contentScrollSlider');
-                parent.innerHTML = Globalize.translateHtml(html, 'xnappotheme');
+                parent.innerHTML = Globalize.translateHtml(html, themeId);
                 loadFavoriteSeries(parent, pageParams, autoFocus, resolve);
                 loadFavoriteEpisodes(parent, pageParams);
             });
@@ -274,7 +276,7 @@ define(['loading', 'alphapicker', './../components/horizontallist', './../compon
                     section.classList.add('hide');
                 }
 
-                XnappoTheme.CardBuilder.buildCards(result.Items, {
+                Okuru.CardBuilder.buildCards(result.Items, {
                     itemsContainer: section.querySelector('.itemsContainer'),
                     shape: 'auto',
                     rows: 2
@@ -311,7 +313,7 @@ define(['loading', 'alphapicker', './../components/horizontallist', './../compon
                     section.classList.add('hide');
                 }
 
-                XnappoTheme.CardBuilder.buildCards(result.Items, {
+                Okuru.CardBuilder.buildCards(result.Items, {
                     itemsContainer: section.querySelector('.itemsContainer'),
                     shape: 'auto',
                     rows: 3

@@ -1,5 +1,7 @@
 define(['./spotlight', 'imageLoader', 'focusManager'], function (spotlight, imageLoader, focusManager) {
 
+    var themeId = 'okuru';
+	
     function loadResume(element, parentId) {
 
         var options = {
@@ -14,12 +16,12 @@ define(['./spotlight', 'imageLoader', 'focusManager'], function (spotlight, imag
 
             var resumeSection = element.querySelector('.resumeSection');
 
-            XnappoTheme.CardBuilder.buildCards(result.Items, {
+            Okuru.CardBuilder.buildCards(result.Items, {
                 parentContainer: resumeSection,
                 itemsContainer: resumeSection.querySelector('.itemsContainer'),
                 shape: 'portraitCard',
                 rows: 1,
-                width: XnappoTheme.CardBuilder.homePortraitWidth,
+                width: Okuru.CardBuilder.homePortraitWidth,
                 preferThumb: false
             });
         });
@@ -39,12 +41,12 @@ define(['./spotlight', 'imageLoader', 'focusManager'], function (spotlight, imag
 
             var resumeSection = element.querySelector('.latestSection');
 
-            XnappoTheme.CardBuilder.buildCards(result, {
+            Okuru.CardBuilder.buildCards(result, {
                 parentContainer: resumeSection,
                 itemsContainer: resumeSection.querySelector('.itemsContainer'),
                 shape: 'portraitCard',
                 rows: 1,
-                width: XnappoTheme.CardBuilder.homePortraitWidth
+                width: Okuru.CardBuilder.homePortraitWidth
             });
         });
     }
@@ -94,10 +96,10 @@ define(['./spotlight', 'imageLoader', 'focusManager'], function (spotlight, imag
 
     function getRecommendationHtml(recommendation) {
 
-        var cardsHtml = XnappoTheme.CardBuilder.buildCardsHtml(recommendation.Items, {
+        var cardsHtml = Okuru.CardBuilder.buildCardsHtml(recommendation.Items, {
             shape: 'portraitCard',
             rows: 1,
-            width: XnappoTheme.CardBuilder.homePortraitWidth
+            width: Okuru.CardBuilder.homePortraitWidth
         });
 
         var html = '';
@@ -200,15 +202,15 @@ define(['./spotlight', 'imageLoader', 'focusManager'], function (spotlight, imag
         loadImages(element, parentId);
 
         //element.querySelector('.allMoviesCard').addEventListener('click', function () {
-        //    Emby.Page.show(Emby.PluginManager.mapPath('xnappotheme', 'movies/movies.html?parentid=' + parentId));
+        //    Emby.Page.show(Emby.PluginManager.mapPath(themeId, 'movies/movies.html?parentid=' + parentId));
         //});
 
         //element.querySelector('.movieCollectionsCard').addEventListener('click', function () {
-        //    Emby.Page.show(Emby.PluginManager.mapPath('xnappotheme', 'movies/movies.html?tab=collections&parentid=' + parentId));
+        //    Emby.Page.show(Emby.PluginManager.mapPath(themeId, 'movies/movies.html?tab=collections&parentid=' + parentId));
         //});
 
         //element.querySelector('.movieFavoritesCard').addEventListener('click', function () {
-        //    Emby.Page.show(Emby.PluginManager.mapPath('xnappotheme', 'movies/movies.html?tab=favorites&parentid=' + parentId));
+        //    Emby.Page.show(Emby.PluginManager.mapPath(themeId, 'movies/movies.html?tab=favorites&parentid=' + parentId));
         //});
 
         self.destroy = function () {

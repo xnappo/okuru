@@ -11,12 +11,12 @@ define([], function () {
                 return;
             }
 
-            XnappoTheme.CardBuilder.buildCards(result.Items, {
+            Okuru.CardBuilder.buildCards(result.Items, {
                 parentContainer: section,
                 itemsContainer: section.querySelector('.itemsContainer'),
                 shape: 'backdropCard',
                 rows: 3,
-                width: XnappoTheme.CardBuilder.homeThumbWidth,
+                width: Okuru.CardBuilder.homeThumbWidth,
                 preferThumb: true,
                 autoFocus: autoFocus
             });
@@ -53,7 +53,7 @@ define([], function () {
 
         return Emby.Models.latestChannelItems(options).then(function (result) {
 
-            XnappoTheme.CardBuilder.buildCards(result.Items, {
+            Okuru.CardBuilder.buildCards(result.Items, {
                 parentContainer: section,
                 itemsContainer: section.querySelector('.itemsContainer'),
                 shape: 'autoHome',

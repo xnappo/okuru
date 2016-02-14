@@ -1,7 +1,9 @@
 define(['loading', 'datetime', 'playbackManager', 'imageLoader', 'userdataButtons', 'itemHelper', './../components/focushandler', './../components/backdrop', './../components/listview', 'mediaInfo', 'focusManager', './../themesettings'],
     function (loading, datetime, playbackManager, imageLoader, userdataButtons, itemHelper, focusHandler, themeBackdrop, listview, mediaInfo, focusManager, themeSettings) {
 
-        function focusMainSection() {
+        var themeId = 'okuru';
+		
+		function focusMainSection() {
 
             focusManager.autoFocus(this);
         }
@@ -131,7 +133,7 @@ define(['loading', 'datetime', 'playbackManager', 'imageLoader', 'userdataButton
 
                 if (url && item.Type != "Season" && item.Type != "BoxSet") {
                     detailImage.classList.remove('hide');
-                    detailImage.innerHTML = '<img class="detailImage" src="' + url + '" />' + XnappoTheme.CardBuilder.getProgressBarHtml(item);
+                    detailImage.innerHTML = '<img class="detailImage" src="' + url + '" />' + Okuru.CardBuilder.getProgressBarHtml(item);
                 } else {
                     detailImage.classList.add('hide');
                     detailImage.innerHTML = '';
@@ -179,11 +181,11 @@ define(['loading', 'datetime', 'playbackManager', 'imageLoader', 'userdataButton
             })[0] || {};
 
             if (item.VideoType == 'Dvd') {
-                html += '<img class="mediaInfoIcon mediaInfoImageIcon" src="' + Emby.PluginManager.mapPath('xnappotheme', 'css/mediaicons/S_Media_DVD_white.png') + '" />';
+                html += '<img class="mediaInfoIcon mediaInfoImageIcon" src="' + Emby.PluginManager.mapPath(themeId, 'css/mediaicons/S_Media_DVD_white.png') + '" />';
             }
 
             if (item.VideoType == 'BluRay') {
-                html += '<img class="mediaInfoIcon mediaInfoImageIcon" src="' + Emby.PluginManager.mapPath('xnappotheme', 'css/mediaicons/S_Media_BlueRay_white.png') + '" />';
+                html += '<img class="mediaInfoIcon mediaInfoImageIcon" src="' + Emby.PluginManager.mapPath(themeId, 'css/mediaicons/S_Media_BlueRay_white.png') + '" />';
             }
 
             var resolutionText = getResolutionText(item);
@@ -448,7 +450,7 @@ define(['loading', 'datetime', 'playbackManager', 'imageLoader', 'userdataButton
                     focusManager.autoFocus(view);
                 }
 
-                XnappoTheme.CardBuilder.buildCards(result.Items, {
+                Okuru.CardBuilder.buildCards(result.Items, {
                     parentContainer: section,
                     itemsContainer: section.querySelector('.itemsContainer'),
                     shape: 'autoVertical',
@@ -714,7 +716,7 @@ define(['loading', 'datetime', 'playbackManager', 'imageLoader', 'userdataButton
 
             Emby.Models.items(query).then(function (result) {
 
-                XnappoTheme.CardBuilder.buildCards(result.Items, {
+                Okuru.CardBuilder.buildCards(result.Items, {
                     parentContainer: element,
                     itemsContainer: element.querySelector('.itemsContainer'),
                     shape: listOptions.shape,
@@ -865,7 +867,7 @@ define(['loading', 'datetime', 'playbackManager', 'imageLoader', 'userdataButton
 
                 section.classList.remove('hide');
 
-                XnappoTheme.CardBuilder.buildCards(result.Items, {
+                Okuru.CardBuilder.buildCards(result.Items, {
                     parentContainer: section,
                     itemsContainer: section.querySelector('.itemsContainer'),
                     shape: 'autoVertical',
@@ -926,7 +928,7 @@ define(['loading', 'datetime', 'playbackManager', 'imageLoader', 'userdataButton
 
                 section.classList.remove('hide');
 
-                XnappoTheme.CardBuilder.buildCards(items, {
+                Okuru.CardBuilder.buildCards(items, {
                     parentContainer: section,
                     itemsContainer: section.querySelector('.itemsContainer'),
                     shape: 'autoVertical',
@@ -987,7 +989,7 @@ define(['loading', 'datetime', 'playbackManager', 'imageLoader', 'userdataButton
 
                 section.querySelector('h2').innerHTML = Globalize.translate('SimilarTo', item.Name);
 
-                XnappoTheme.CardBuilder.buildCards(result.Items, {
+                Okuru.CardBuilder.buildCards(result.Items, {
                     parentContainer: section,
                     itemsContainer: section.querySelector('.itemsContainer'),
                     shape: 'autoVertical',

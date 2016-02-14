@@ -14,12 +14,12 @@ define(['./spotlight', 'focusManager'], function (spotlight, focusManager) {
 
             var section = element.querySelector('.resumeSection');
 
-            XnappoTheme.CardBuilder.buildCards(result.Items, {
+            Okuru.CardBuilder.buildCards(result.Items, {
                 parentContainer: section,
                 itemsContainer: section.querySelector('.itemsContainer'),
                 shape: 'backdropCard',
                 rows: 1,
-                width: XnappoTheme.CardBuilder.homeThumbWidth,
+                width: Okuru.CardBuilder.homeThumbWidth,
                 preferThumb: true,
                 addImageData: true
             });
@@ -38,12 +38,12 @@ define(['./spotlight', 'focusManager'], function (spotlight, focusManager) {
 
             var section = element.querySelector('.nextUpSection');
 
-            XnappoTheme.CardBuilder.buildCards(result.Items, {
+            Okuru.CardBuilder.buildCards(result.Items, {
                 parentContainer: section,
                 itemsContainer: section.querySelector('.itemsContainer'),
                 shape: 'backdropCard',
                 rows: 1,
-                width: XnappoTheme.CardBuilder.homeThumbWidth,
+                width: Okuru.CardBuilder.homeThumbWidth,
                 preferThumb: true,
                 addImageData: true
             });
@@ -66,12 +66,12 @@ define(['./spotlight', 'focusManager'], function (spotlight, focusManager) {
 
             var section = element.querySelector('.latestSection');
 
-            XnappoTheme.CardBuilder.buildCards(result, {
+            Okuru.CardBuilder.buildCards(result, {
                 parentContainer: section,
                 itemsContainer: section.querySelector('.itemsContainer'),
                 shape: 'backdropCard',
                 rows: 1,
-                width: XnappoTheme.CardBuilder.homeThumbWidth,
+                width: Okuru.CardBuilder.homeThumbWidth,
                 preferThumb: true,
                 showGroupCount: true
             });
@@ -150,15 +150,15 @@ define(['./spotlight', 'focusManager'], function (spotlight, focusManager) {
         //loadImages(element, parentId);
 
         //element.querySelector('.allSeriesCard').addEventListener('click', function () {
-        //    Emby.Page.show(Emby.PluginManager.mapPath('xnappotheme', 'tv/tv.html?parentid=' + parentId));
+        //    Emby.Page.show(Emby.PluginManager.mapPath(themeId, 'tv/tv.html?parentid=' + parentId));
         //});
 
         //element.querySelector('.tvUpcomingCard').addEventListener('click', function () {
-        //    Emby.Page.show(Emby.PluginManager.mapPath('xnappotheme', 'tv/tv.html?tab=upcoming&parentid=' + parentId));
+        //    Emby.Page.show(Emby.PluginManager.mapPath(themeId, 'tv/tv.html?tab=upcoming&parentid=' + parentId));
         //});
 
         //element.querySelector('.tvFavoritesCard').addEventListener('click', function () {
-        //    Emby.Page.show(Emby.PluginManager.mapPath('xnappotheme', 'tv/tv.html?tab=favorites&parentid=' + parentId));
+        //    Emby.Page.show(Emby.PluginManager.mapPath(themeId, 'tv/tv.html?tab=favorites&parentid=' + parentId));
         //});
 
         self.destroy = function () {

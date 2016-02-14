@@ -10,7 +10,7 @@ define(['datetime', 'imageLoader', 'connectionManager', 'itemHelper', 'mediaInfo
             if (options.rows !== 0) {
                 options.rows = 2;
             }
-            options.width = XnappoTheme.CardBuilder.homePortraitWidth;
+            options.width = Okuru.CardBuilder.homePortraitWidth;
         }
         else if (primaryImageAspectRatio && primaryImageAspectRatio > 1.34) {
             options.shape = 'backdropCard';
@@ -19,7 +19,7 @@ define(['datetime', 'imageLoader', 'connectionManager', 'itemHelper', 'mediaInfo
                 options.rows = 3;
             }
 
-            options.width = XnappoTheme.CardBuilder.homeThumbWidth;
+            options.width = Okuru.CardBuilder.homeThumbWidth;
         }
         else {
             options.shape = 'squareCard';
@@ -722,7 +722,7 @@ define(['datetime', 'imageLoader', 'connectionManager', 'itemHelper', 'mediaInfo
             var value = listItemsMoreButton.getAttribute('data-indexvalue');
             var parentid = listItemsMoreButton.getAttribute('data-parentid');
 
-            Emby.Page.show(Emby.PluginManager.mapPath('xnappotheme', 'list/list.html') + '?parentid=' + parentid + '&genreId=' + value);
+            Emby.Page.show(Emby.PluginManager.mapRoute('okuru', 'list/list.html') + '?parentid=' + parentid + '&genreId=' + value);
         }
     }
 
@@ -736,8 +736,8 @@ define(['datetime', 'imageLoader', 'connectionManager', 'itemHelper', 'mediaInfo
         getProgressBarHtml: getProgressBarHtml
     };
 
-    window.XnappoTheme = window.XnappoTheme || {};
-    window.XnappoTheme.CardBuilder = cardBuilder;
+    window.Okuru = window.Okuru || {};
+    window.Okuru.CardBuilder = cardBuilder;
 
     return cardBuilder;
 });

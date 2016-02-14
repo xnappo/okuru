@@ -1,6 +1,8 @@
 define(['loading', 'alphapicker', './../components/horizontallist', './../components/focushandler', './../components/tabbedpage', './../components/backdrop', 'focusManager'], function (loading, alphaPicker, horizontalList, focusHandler, tabbedPage, themeBackdrop, focusManager) {
 
-    return function (view, params) {
+    var themeId = 'okuru';
+	
+	return function (view, params) {
 
         var self = this;
 
@@ -150,7 +152,7 @@ define(['loading', 'alphapicker', './../components/horizontallist', './../compon
 
         function renderGenres(page, pageParams, autoFocus, slyFrame, resolve) {
 
-            self.listController = new XnappoTheme.HorizontalList({
+            self.listController = new Okuru.HorizontalList({
 
                 itemsContainer: page.querySelector('.contentScrollSlider'),
                 getItemsMethod: function (startIndex, limit) {
@@ -166,7 +168,7 @@ define(['loading', 'alphapicker', './../components/horizontallist', './../compon
                     shape: 'backdropCard',
                     rows: 3,
                     preferThumb: true,
-                    width: XnappoTheme.CardBuilder.homeThumbWidth
+                    width: Okuru.CardBuilder.homeThumbWidth
                 },
                 listCountElement: page.querySelector('.listCount'),
                 listNumbersElement: page.querySelector('.listNumbers'),
@@ -197,7 +199,7 @@ define(['loading', 'alphapicker', './../components/horizontallist', './../compon
                 e.preventDefault();
                 e.stopPropagation();
 
-                Emby.Page.show(Emby.PluginManager.mapPath('xnappotheme', 'list/list.html') + '?parentid=' + parentid + '&genreId=' + value);
+                Emby.Page.show(Emby.PluginManager.mapRoute(themeId, 'list/list.html') + '?parentid=' + parentid + '&genreId=' + value);
 
                 return false;
             }
@@ -378,12 +380,12 @@ define(['loading', 'alphapicker', './../components/horizontallist', './../compon
 
         function renderFavorites(page, pageParams, autoFocus, slyFrame, resolve) {
 
-            fetch(Emby.PluginManager.mapUrl('xnappotheme', 'music/views.favorites.html'), { mode: 'no-cors' }).then(function (response) {
+            fetch(Emby.PluginManager.mapUrl(themeId, 'music/views.favorites.html'), { mode: 'no-cors' }).then(function (response) {
                 return response.text();
             }).then(function (html) {
 
                 var parent = page.querySelector('.contentScrollSlider');
-                parent.innerHTML = Globalize.translateHtml(html, 'xnappotheme');
+                parent.innerHTML = Globalize.translateHtml(html, themeId);
                 loadFavoriteArtists(parent, pageParams, autoFocus, resolve);
                 loadFavoriteAlbums(parent, pageParams);
             });
@@ -413,7 +415,7 @@ define(['loading', 'alphapicker', './../components/horizontallist', './../compon
                     section.classList.add('hide');
                 }
 
-                XnappoTheme.CardBuilder.buildCards(result.Items, {
+                Okuru.CardBuilder.buildCards(result.Items, {
                     itemsContainer: section.querySelector('.itemsContainer'),
                     shape: 'auto',
                     rows: 2
@@ -450,7 +452,7 @@ define(['loading', 'alphapicker', './../components/horizontallist', './../compon
                     section.classList.add('hide');
                 }
 
-                XnappoTheme.CardBuilder.buildCards(result.Items, {
+                Okuru.CardBuilder.buildCards(result.Items, {
                     itemsContainer: section.querySelector('.itemsContainer'),
                     shape: 'auto',
                     rows: 3

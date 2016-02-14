@@ -1,6 +1,6 @@
 define(['userSettings'], function (userSettings) {
 
-    var settingsPrefix = 'xnappotheme-';
+    var settingsPrefix = 'okuru-';
     var obj = function () {
 
         var self = this;
