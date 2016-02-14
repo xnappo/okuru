@@ -17,10 +17,10 @@ define(['./spotlight', 'imageLoader', 'focusManager'], function (spotlight, imag
             XnappoTheme.CardBuilder.buildCards(result.Items, {
                 parentContainer: resumeSection,
                 itemsContainer: resumeSection.querySelector('.itemsContainer'),
-                shape: 'backdropCard',
-                rows: 3,
-                width: XnappoTheme.CardBuilder.homeThumbWidth,
-                preferThumb: true
+                shape: 'portraitCard',
+                rows: 1,
+                width: XnappoTheme.CardBuilder.homePortraitWidth,
+                preferThumb: false
             });
         });
     }
@@ -30,7 +30,7 @@ define(['./spotlight', 'imageLoader', 'focusManager'], function (spotlight, imag
         var options = {
 
             IncludeItemTypes: "Movie",
-            Limit: 12,
+            Limit: 20,
             ParentId: parentId,
             EnableImageTypes: "Primary,Backdrop,Thumb"
         };
@@ -43,7 +43,7 @@ define(['./spotlight', 'imageLoader', 'focusManager'], function (spotlight, imag
                 parentContainer: resumeSection,
                 itemsContainer: resumeSection.querySelector('.itemsContainer'),
                 shape: 'portraitCard',
-                rows: 2,
+                rows: 1,
                 width: XnappoTheme.CardBuilder.homePortraitWidth
             });
         });
@@ -96,7 +96,7 @@ define(['./spotlight', 'imageLoader', 'focusManager'], function (spotlight, imag
 
         var cardsHtml = XnappoTheme.CardBuilder.buildCardsHtml(recommendation.Items, {
             shape: 'portraitCard',
-            rows: 2,
+            rows: 1,
             width: XnappoTheme.CardBuilder.homePortraitWidth
         });
 
