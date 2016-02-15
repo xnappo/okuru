@@ -131,6 +131,7 @@ a {
     overflow: hidden;
     	position: absolute;
         top: 45%;
+        background-image: url(images/verticalmenu_overlay.png);
 }
 
     .userViewNames .scrollFrameX .scrollSlider {
