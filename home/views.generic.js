@@ -21,7 +21,8 @@ define([], function () {
             Okuru.CardBuilder.buildCards(result.Items, {
                 parentContainer: section,
                 itemsContainer: section.querySelector('.itemsContainer'),
-                shape: 'autoHome',
+                shape: 'squareCard',
+                rows: 1,
                 autoFocus: autoFocus,
                 coverImage: true,
                 showTitle: true
