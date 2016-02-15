@@ -137,7 +137,7 @@ define(['./spotlight', 'imageLoader', 'focusManager'], function (spotlight, imag
         
         
         html += '<div class="horizontalSection2">';
-        html += '<p><br><br><br><br></p><div class="sectionTitle">' + title + '</div>';
+        html += '<div class="navContainer"></div><div class="sectionTitle">' + title + '</div>';
 
         html += '<div class="itemsContainer">';
 

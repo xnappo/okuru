@@ -133,6 +133,11 @@ a {
         top: 45%;
         background-image: url(images/verticalmenu_overlay.png);
         background-position: 90%;
+    width: 100%;
+}
+
+.userViewNames .viewsScrollSlider {
+    text-align: center;
 }
 
     .userViewNames .scrollFrameX .scrollSlider {
