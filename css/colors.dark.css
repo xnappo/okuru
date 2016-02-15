@@ -54,12 +54,12 @@ paper-input .focused-line {
 }
 
 .card[focused] .cardBox, .card:focus .cardBox {
-    border-color: #52B54B;
+    border-color: #BCC6CC;
     /*border-color: rgba(0, 0, 0, .6);*/
 }
 
 .card[data-cardtype='embyconnect'] .cardImageContainer {
-    background-color: #52B54B;
+    background-color: #BCC6CC;
 }
 
 .headerBackButton {
@@ -167,7 +167,7 @@ paper-icon-item {
 
     paper-icon-item[focused] {
         background-color: rgba(20,20,20,.90);
-        border: 1px solid #52B54B;
+        border: 1px solid #BCC6CC;
         outline: none !important;
     }
 
