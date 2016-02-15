@@ -21,7 +21,8 @@ define([], function () {
             Okuru.CardBuilder.buildCards(result, {
                 parentContainer: section,
                 itemsContainer: section.querySelector('.itemsContainer'),
-                shape: 'autoHome',
+                shape: 'squareCard',
+                rows: 1,
                 width: Okuru.CardBuilder.homePortraitWidth
             });
         });
@@ -48,7 +49,8 @@ define([], function () {
             Okuru.CardBuilder.buildCards(result.Items, {
                 parentContainer: section,
                 itemsContainer: section.querySelector('.itemsContainer'),
-                shape: 'autoHome',
+                shape: 'squareCard',
+                rows: 1,
                 width: Okuru.CardBuilder.homePortraitWidth,
                 showTitle: true
             });
@@ -78,7 +80,8 @@ define([], function () {
             Okuru.CardBuilder.buildCards(result.Items, {
                 parentContainer: section,
                 itemsContainer: section.querySelector('.itemsContainer'),
-                shape: 'autoHome',
+                shape: 'squareCard',
+                rows: 1,
                 width: Okuru.CardBuilder.homePortraitWidth,
                 action: 'instantmix'
             });
@@ -108,8 +111,9 @@ define([], function () {
             Okuru.CardBuilder.buildCards(result.Items, {
                 parentContainer: section,
                 itemsContainer: section.querySelector('.itemsContainer'),
-                shape: 'autoHome',
+                shape: 'squareCard',
                 width: Okuru.CardBuilder.homePortraitWidth,
+                rows: 1,
                 action: 'instantmix'
             });
         });
@@ -137,7 +141,8 @@ define([], function () {
             Okuru.CardBuilder.buildCards(result.Items, {
                 parentContainer: section,
                 itemsContainer: section.querySelector('.itemsContainer'),
-                shape: 'autoHome',
+                shape: 'squareCard',
+                rows: 1,
                 width: Okuru.CardBuilder.homePortraitWidth,
                 action: 'instantmix'
             });
@@ -166,7 +171,8 @@ define([], function () {
             Okuru.CardBuilder.buildCards(result.Items, {
                 parentContainer: section,
                 itemsContainer: section.querySelector('.itemsContainer'),
-                shape: 'autoHome',
+                shape: 'squareCard',
+                rows: 1,
                 width: Okuru.CardBuilder.homePortraitWidth
             });
         });
@@ -193,7 +199,8 @@ define([], function () {
             Okuru.CardBuilder.buildCards(result.Items, {
                 parentContainer: section,
                 itemsContainer: section.querySelector('.itemsContainer'),
-                shape: 'autoHome',
+                shape: 'squareCard',
+                rows: 1,
                 width: Okuru.CardBuilder.homePortraitWidth
             });
         });
@@ -228,17 +235,17 @@ define([], function () {
             ]);
         };
 
-        element.querySelector('.artistsCard').addEventListener('click', function () {
-            gotoMusicView('albumartists', parentId);
-        });
+        //element.querySelector('.artistsCard').addEventListener('click', function () {
+        //    gotoMusicView('albumartists', parentId);
+        //});
 
-        element.querySelector('.albumsCard').addEventListener('click', function () {
-            gotoMusicView('albums', parentId);
-        });
+        //element.querySelector('.albumsCard').addEventListener('click', function () {
+        //    gotoMusicView('albums', parentId);
+        //});
 
-        element.querySelector('.genresCard').addEventListener('click', function () {
-            gotoMusicView('genres', parentId);
-        });
+        //element.querySelector('.genresCard').addEventListener('click', function () {
+        //    gotoMusicView('genres', parentId);
+        //});
 
         self.destroy = function () {
 

@@ -200,7 +200,7 @@ define(['./spotlight', 'imageLoader', 'focusManager'], function (spotlight, imag
             return promises;
         };
         //loadSpotlight(element, parentId);
-        loadImages(element, parentId);
+        //loadImages(element, parentId);
 
         //element.querySelector('.allMoviesCard').addEventListener('click', function () {
         //    Emby.Page.show(Emby.PluginManager.mapPath(themeId, 'movies/movies.html?parentid=' + parentId));
