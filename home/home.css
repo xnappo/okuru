@@ -1,11 +1,27 @@
 .wideSpotlightCard {
     width: 100%;
 }
+ 
+.topSpacerPortrait {
+    height: 2vh;
+}
 
-.navContainer {
-    height: 30vh;
+.topSpacerBackdrop {
+    height: 5vh;
+}
+
+.topSpacerSquare {
+    height: 5vh;
+}
+
+.navContainerPortrait {
+    height: 12vh;
+ }
+ 
+ .navContainerBackdrop {
+    height: 25vh;
  }
 
-.topSpacer {
-    height: 4vh;
-}
+ .navContainerSquare {
+    height: 25vh;
+ }
