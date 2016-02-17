@@ -8,7 +8,7 @@ define(['loading', 'slyScroller', './focushandler', 'focusManager'], function (l
 
         var options = {
             horizontal: 1,
-            itemNav: 'basic',
+            itemNav: 'forcedCenter',
             mouseDragging: 1,
             touchDragging: 1,
             slidee: userViewNames.querySelector('.scrollSlider'),
