@@ -15,7 +15,7 @@
 }
 
 .navContainerPortrait {
-    height: 12vh;
+    height: 15vh;
  }
  
  .navContainerBackdrop {
@@ -30,20 +30,40 @@
     color: #aaa;
     display: block;
     position: absolute;
-    top: 50.5%;
+    top: 51.75%;
     margin-left: auto;
     margin-right: auto;
-    height: 6vh;
+    height: 4vh;
     width: 100%;
-    font-size: 85%;
+    font-size: 65%;
     font-family: Roboto;
     font-weight: 900;   
     background-image: url(../css/images/menu_trans.png);
 }
 
-.buttonFavorites {
-	margin-left: 45%;
-	    font-size: 85%;
+.btnFavorites {
+	margin-left: 35%;
+	margin-top: 0;
+	width: 30%
+	font-size: 65%;
+    font-family: Roboto;
+    font-weight: 900;   
+}
+
+.btnNextUp {
+	margin-left: 5%;
+	margin-top: 0;
+	width: 30%
+	font-size: 65%;
+    font-family: Roboto;
+    font-weight: 900;   
+}
+
+.btnLatest{
+	margin-left: 5%;
+	margin-top: 0;
+	width: 30%
+	font-size: 65%;
     font-family: Roboto;
     font-weight: 900;   
 }
