@@ -33,12 +33,12 @@
     top: 50.5%;
     margin-left: auto;
     margin-right: auto;
-    height: 5.5vh;
+    height: 6vh;
     width: 100%;
     font-size: 85%;
     font-family: Roboto;
     font-weight: 900;   
-    background-image: url(../css/images/verticalmenu_overlay.png);
+    background-image: url(../css/images/menu_trans.png);
 }
 
 .buttonFavorites {
