@@ -31,20 +31,19 @@
     display: block;
     position: absolute;
     top: 50.5%;
-    margin-left: 40%;
+    margin-left: auto;
     margin-right: auto;
-    height: 3vh;
+    height: 5.5vh;
+    width: 100%;
     font-size: 85%;
     font-family: Roboto;
     font-weight: 900;   
-    background-image: url(images/verticalmenu_overlay.png);
+    background-image: url(../css/images/verticalmenu_overlay.png);
 }
 
-    .subMenuButtonsContainer .userDataIcons {
-        display: inline-block;
-        height: 3vh;
-        margin-left: auto;
-        margin-right: auto;
-        background-image: url(images/verticalmenu_overlay.png);
-        
-    }
+.buttonFavorites {
+	margin-left: 45%;
+	    font-size: 85%;
+    font-family: Roboto;
+    font-weight: 900;   
+}

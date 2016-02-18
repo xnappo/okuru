@@ -1,8 +1,8 @@
 define(['loading', 'slyScroller', './focushandler', 'focusManager'], function (loading, slyScroller, focusHandler, focusManager) {
-
+    var themeId = 'okuru';
     function createHeaderScroller(view, instance, initialTabId) {
-
-        var userViewNames = view.querySelector('.userViewNames');
+        
+    	var userViewNames = view.querySelector('.userViewNames');
 
         var scrollFrame = userViewNames.querySelector('.scrollFrame');
 
@@ -44,27 +44,31 @@ define(['loading', 'slyScroller', './focushandler', 'focusManager'], function (l
     }
 
     function initEvents(view, instance) {
-
+    	
         // Catch events on the view headers
         var userViewNames = view.querySelector('.userViewNames');
         userViewNames.addEventListener('mousedown', function (e) {
-
             var elem = Emby.Dom.parentWithClass(e.target, 'btnUserViewHeader');
-
             if (elem) {
                 elem.focus();
             }
         });
 
         userViewNames.addEventListener('focus', function (e) {
-
             var elem = Emby.Dom.parentWithClass(e.target, 'btnUserViewHeader');
-
             if (elem) {
                 instance.headerSlyFrame.toCenter(elem);
                 instance.setFocusDelay(view, elem);
             }
         }, true);
+         
+        userViewNames.addEventListener('click', function (e) {
+            var elem = Emby.Dom.parentWithClass(e.target, 'btnUserViewHeader');
+            if (elem) {
+                var viewId = elem.getAttribute('data-id');
+                Emby.Page.show(Emby.PluginManager.mapRoute(themeId, 'movies/movies.html?parentid=' + viewId));
+            }
+       }, true);
     }
 
     function selectUserView(page, id, self) {

@@ -3,7 +3,7 @@ html {
 }
 
 a {
-    color: #52B54B;
+    color: #E7E7E7;
     outline: none !important;
 }
 
@@ -41,7 +41,7 @@ paper-input .focused-line {
 }
 
     .paperRaised:focus, paper-button[focused]:not(.btnUserViewHeader) {
-        background: #52B54B;
+        background: #8e9294;
         color: #fff;
     }
 
