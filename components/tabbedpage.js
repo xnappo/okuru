@@ -53,12 +53,27 @@ define(['loading', 'slyScroller', './focushandler', 'focusManager'], function (l
                 elem.focus();
             }
         });
+        var btnNextUp = view.querySelector('.btnNextUp');
+
+
 
         userViewNames.addEventListener('focus', function (e) {
             var elem = Emby.Dom.parentWithClass(e.target, 'btnUserViewHeader');
+            var viewType = elem.getAttribute('data-type');
             if (elem) {
                 instance.headerSlyFrame.toCenter(elem);
                 instance.setFocusDelay(view, elem);
+            }
+            //console.log("viewType:" + viewType);
+            switch(viewType) {
+                	case 'movies':            
+                		btnNextUp.innerHTML = 'Genres';
+                		break;
+                	case 'tvshows':
+                		btnNextUp.innerHTML = 'NextUp';
+                		break;
+                    default:
+                    	btnNextUp.innerHTML = '';
             }
         }, true);
          
@@ -67,12 +82,12 @@ define(['loading', 'slyScroller', './focushandler', 'focusManager'], function (l
             if (elem) {
                 var viewId = elem.getAttribute('data-id');
                 var viewType = elem.getAttribute('data-type');
-                 console.log("viewType:" + viewType);
+                //console.log("viewType:" + viewType);
                 switch(viewType) {
                 	case 'movies':                	
                 	    Emby.Page.show(Emby.PluginManager.mapRoute(themeId, 'movies/movies.html?parentid=' + viewId));
                 	    break;
-                	case 'tv':                	
+                	case 'tvshows':                	
                 	    Emby.Page.show(Emby.PluginManager.mapRoute(themeId, 'tv/tv.html?parentid=' + viewId));
                 	    break;
                 	case 'music':                	
@@ -87,10 +102,6 @@ define(['loading', 'slyScroller', './focushandler', 'focusManager'], function (l
                 	default:
                 		Emby.Page.show(Emby.PluginManager.mapRoute(themeId, 'list/list.html?parentid=' + viewId));
                 }
-                //homevideos
-                //folders
-                //""
-                //music
             }
        }, true);
     }
