@@ -33,7 +33,7 @@
     top: 51.75%;
     margin-left: auto;
     margin-right: auto;
-    height: 4vh;
+    height: 2.5vh;
     width: 100%;
     font-size: 65%;
     font-family: Roboto;
@@ -43,27 +43,38 @@
 
 .btnFavorites {
 	margin-left: 35%;
+	border-radius: 1px;
+	vertical-align: middle;
 	margin-top: 0;
+	margin-bottom: 0;
+	height: 2.5vh;
 	width: 30%
 	font-size: 65%;
     font-family: Roboto;
     font-weight: 900;   
+    line-height: .5vh;
 }
 
 .btnNextUp {
 	margin-left: 5%;
 	margin-top: 0;
+	margin-bottom: 0;
+	height: 2.5vh;
 	width: 30%
 	font-size: 65%;
     font-family: Roboto;
     font-weight: 900;   
+    line-height: .5vh;
 }
 
 .btnLatest{
 	margin-left: 5%;
 	margin-top: 0;
+	margin-bottom: 0;
+	height: 2.5vh;
 	width: 30%
 	font-size: 65%;
     font-family: Roboto;
     font-weight: 900;   
+    line-height: .5vh;
 }
