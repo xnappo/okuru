@@ -63,6 +63,7 @@ define(['loading', 'slyScroller', './focushandler', 'focusManager','inputManager
     function initEvents(view, instance) {
     	
         // Catch events on the view headers
+        var btnFavorites = view.querySelector('.btnFavorites');
         var userViewNames = view.querySelector('.userViewNames');
 
         userViewNames.addEventListener('mousedown', function (e) {
@@ -94,13 +95,13 @@ define(['loading', 'slyScroller', './focushandler', 'focusManager','inputManager
                     	btnNextUp.innerHTML = '';
             }
         }, true);
-
+        
         userViewNames.addEventListener('click', function (e) {
             var elem = Emby.Dom.parentWithClass(e.target, 'btnUserViewHeader');
             if (elem) {
                 var viewId = elem.getAttribute('data-id');
                 var viewType = elem.getAttribute('data-type');
-                //console.log("viewType:" + viewType);
+    
                 switch(viewType) {
                 	case 'movies':                	
                 	    Emby.Page.show(Emby.PluginManager.mapRoute(themeId, 'movies/movies.html?parentid=' + viewId));

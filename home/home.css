@@ -78,3 +78,45 @@
     font-weight: 900;   
     line-height: .5vh;
 }
+
+.userViewNames {
+    /* Somehow this resolves the issue of the content getting distorted 
+        https://github.com/MediaBrowser/Emby.Theater.Windows/issues/270
+    */
+    overflow: hidden;
+    	position: absolute;
+        top: 45%;
+        background-image: url(../css/images/verticalmenu_overlay.png);
+        background-position: 90%;
+    width: 100%;
+}
+
+.userViewNames .viewsScrollSlider {
+    text-align: center;
+}
+
+.userViewNames .scrollFrameX .scrollSlider {
+    padding-left: 3.75%;
+}
+
+.userViewNames h2 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.userViewNames .btnUserViewHeader {
+    min-width: initial;
+    text-transform: none !important;
+    margin-top: 0;
+    padding-top: 0;
+    padding-bottom: .2em;
+ 
+    font-size: 200%;
+
+}
+
+.userViewButtonText {
+    font-size: 110%;
+    font-family: Roboto;
+    font-weight: 900;   
+}

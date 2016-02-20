@@ -119,6 +119,9 @@ define(['playbackManager', 'pluginManager'], function (playbackManager, pluginMa
             routes.push({
                 path: 'movies/movies.html',
                 transition: 'slide',
+                dependencies: [
+                    'css!' + pluginManager.mapPath(self, 'movies/movies.css')
+                ],
                 controller: self.id + '/movies/movies'
             });
 

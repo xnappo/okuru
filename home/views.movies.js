@@ -181,7 +181,7 @@ define(['./spotlight', 'imageLoader', 'focusManager'], function (spotlight, imag
     function view(element, parentId, autoFocus) {
 
         var self = this;
-
+        var themeId = 'okuru';
         if (autoFocus) {
             focusManager.autoFocus(element);
         }
@@ -206,13 +206,13 @@ define(['./spotlight', 'imageLoader', 'focusManager'], function (spotlight, imag
         //    Emby.Page.show(Emby.PluginManager.mapPath(themeId, 'movies/movies.html?parentid=' + parentId));
         //});
 
-        //element.querySelector('.movieCollectionsCard').addEventListener('click', function () {
-        //    Emby.Page.show(Emby.PluginManager.mapPath(themeId, 'movies/movies.html?tab=collections&parentid=' + parentId));
-        //});
+        document.querySelector('.btnNextUp').addEventListener('click', function () {
+              Emby.Page.show(Emby.PluginManager.mapRoute(themeId, 'movies/movies.html?tab=genres&parentid=' + parentId));
+        });
+        document.querySelector('.btnFavorites').addEventListener('click', function () {
+              Emby.Page.show(Emby.PluginManager.mapRoute(themeId, 'movies/movies.html?tab=favorites&parentid=' + parentId));
+        });
 
-        //element.querySelector('.movieFavoritesCard').addEventListener('click', function () {
-        //    Emby.Page.show(Emby.PluginManager.mapPath(themeId, 'movies/movies.html?tab=favorites&parentid=' + parentId));
-        //});
 
         self.destroy = function () {
 
