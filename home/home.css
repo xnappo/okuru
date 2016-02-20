@@ -79,7 +79,7 @@
     line-height: .5vh;
 }
 
-.userViewNames {
+.homePageContainer .userViewNames {
     /* Somehow this resolves the issue of the content getting distorted 
         https://github.com/MediaBrowser/Emby.Theater.Windows/issues/270
     */
@@ -91,20 +91,20 @@
     width: 100%;
 }
 
-.userViewNames .viewsScrollSlider {
+.homePageContainer .userViewNames .viewsScrollSlider {
     text-align: center;
 }
 
-.userViewNames .scrollFrameX .scrollSlider {
+.homePageContainer .userViewNames .scrollFrameX .scrollSlider {
     padding-left: 3.75%;
 }
 
-.userViewNames h2 {
+.homePageContainer .userViewNames h2 {
     margin-top: 0;
     margin-bottom: 0;
 }
 
-.userViewNames .btnUserViewHeader {
+.homePageContainer .userViewNames .btnUserViewHeader {
     min-width: initial;
     text-transform: none !important;
     margin-top: 0;
@@ -115,7 +115,7 @@
 
 }
 
-.userViewButtonText {
+.homePageContainer .userViewButtonText {
     font-size: 110%;
     font-family: Roboto;
     font-weight: 900;   
