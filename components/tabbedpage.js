@@ -1,5 +1,7 @@
-define(['loading', 'slyScroller', './focushandler', 'focusManager'], function (loading, slyScroller, focusHandler, focusManager) {
+define(['loading', 'slyScroller', './focushandler', 'focusManager','inputManager'], function (loading, slyScroller, focusHandler, focusManager, inputManager) {
     var themeId = 'okuru';
+    inputManager.on(window, onInputCommand);
+    
     function createHeaderScroller(view, instance, initialTabId) {
         
     	var userViewNames = view.querySelector('.userViewNames');
@@ -42,11 +44,27 @@ define(['loading', 'slyScroller', './focushandler', 'focusManager'], function (l
             instance.setFocusDelay(view, initialTab);
         });
     }
-
+    function onInputCommand(e) {
+    	var subMenu = document.querySelector('.subMenuButtonsContainer');
+    	var elem = Emby.Dom.parentWithClass(e.target, 'btnUserViewHeader');
+        if (elem) {
+        	switch (e.detail.command) {
+            	 case 'down':
+            	 	 console.log("down");
+            	 	 setTimeout(function () {
+            	 	 		 focusManager.autoFocus(subMenu);
+            	 	 }, 0);
+            	 break;
+            }
+		}
+				
+    }
+    
     function initEvents(view, instance) {
     	
         // Catch events on the view headers
         var userViewNames = view.querySelector('.userViewNames');
+
         userViewNames.addEventListener('mousedown', function (e) {
             var elem = Emby.Dom.parentWithClass(e.target, 'btnUserViewHeader');
             if (elem) {
@@ -76,7 +94,7 @@ define(['loading', 'slyScroller', './focushandler', 'focusManager'], function (l
                     	btnNextUp.innerHTML = '';
             }
         }, true);
-         
+
         userViewNames.addEventListener('click', function (e) {
             var elem = Emby.Dom.parentWithClass(e.target, 'btnUserViewHeader');
             if (elem) {
