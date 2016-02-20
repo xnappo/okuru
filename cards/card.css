@@ -191,7 +191,7 @@ button.card {
     right: .5vh;
     top: .5vh;
     position: absolute;
-    background: rgba(82,181,75,1);
+    background: #6A9CB7;
     border-radius: 500px;
     width: 3.8vh;
     height: 3.8vh;
@@ -209,7 +209,7 @@ button.card {
     right: .5vh;
     top: .5vh;
     position: absolute;
-    background: rgba(82,181,75,1);
+    background: #6A9CB7;
     border-radius: 500px;
     width: 3.8vh;
     height: 3.8vh;

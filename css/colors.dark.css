@@ -41,7 +41,8 @@ paper-input .focused-line {
 }
 
     .paperRaised:focus, paper-button[focused]:not(.btnUserViewHeader) {
-        background: #8e9294;
+        /*background: #8e9294;*/
+        background: #6A9CB7;
         color: #fff;
     }
 

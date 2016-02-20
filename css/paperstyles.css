@@ -12,20 +12,20 @@ paper-progress.transparent #progressContainer {
 }
 
 .paper-slider-0 #sliderKnobInner.paper-slider {
-    background-color: #52B54B;
-    border-color: #52B54B;
+    background-color: #6A9CB7;
+    border-color: #6A9CB7;
 }
 
 .paper-slider-0 paper-ripple.paper-slider {
-    color: #52B54B;
+    color: #6A9CB7;
 }
 
 .paper-slider-0 #sliderKnobInner.paper-slider::before {
-    background-color: #52B54B !important;
+    background-color: #6A9CB7 !important;
 }
 
 paper-progress #primaryProgress {
-    background-color: #52B54B !important;
+    background-color: #6A9CB7 !important;
 }
 
 paper-progress #secondaryProgress {

@@ -83,8 +83,8 @@ define(['loading', 'slyScroller', './focushandler', 'focusManager','inputManager
                 instance.headerSlyFrame.toCenter(elem);
                 instance.setFocusDelay(view, elem);
             }
-            //console.log("viewType:" + viewType);
-            switch(viewType) {
+            if (viewType) {
+            	switch(viewType) {
                 	case 'movies':            
                 		btnNextUp.innerHTML = 'Genres';
                 		break;
@@ -93,6 +93,7 @@ define(['loading', 'slyScroller', './focushandler', 'focusManager','inputManager
                 		break;
                     default:
                     	btnNextUp.innerHTML = '';
+                }
             }
         }, true);
         
