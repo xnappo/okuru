@@ -205,11 +205,13 @@ define(['./spotlight', 'imageLoader', 'focusManager'], function (spotlight, imag
         //element.querySelector('.allMoviesCard').addEventListener('click', function () {
         //    Emby.Page.show(Emby.PluginManager.mapPath(themeId, 'movies/movies.html?parentid=' + parentId));
         //});
-
-        document.querySelector('.btnNextUp').addEventListener('click', function () {
+        document.querySelector('.btnSub1').addEventListener('click', function () {
               Emby.Page.show(Emby.PluginManager.mapRoute(themeId, 'movies/movies.html?tab=genres&parentid=' + parentId));
         });
-        document.querySelector('.btnFavorites').addEventListener('click', function () {
+        document.querySelector('.btnSub2').addEventListener('click', function () {
+              Emby.Page.show(Emby.PluginManager.mapRoute(themeId, 'movies/movies.html?tab=unwatched&parentid=' + parentId));
+        });
+        document.querySelector('.btnSub3').addEventListener('click', function () {
               Emby.Page.show(Emby.PluginManager.mapRoute(themeId, 'movies/movies.html?tab=favorites&parentid=' + parentId));
         });
 

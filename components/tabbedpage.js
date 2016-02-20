@@ -72,7 +72,9 @@ define(['loading', 'slyScroller', './focushandler', 'focusManager','inputManager
                 elem.focus();
             }
         });
-        var btnNextUp = view.querySelector('.btnNextUp');
+        var btnSub1 = view.querySelector('.btnSub1');
+        var btnSub2 = view.querySelector('.btnSub2');
+        var btnSub3 = view.querySelector('.btnSub3');
 
 
 
@@ -86,13 +88,24 @@ define(['loading', 'slyScroller', './focushandler', 'focusManager','inputManager
             if (viewType) {
             	switch(viewType) {
                 	case 'movies':            
-                		btnNextUp.innerHTML = 'Genres';
+                		btnSub1.innerHTML = 'Genres';
+                		btnSub2.innerHTML = 'Unwatched';
+                		btnSub3.innerHTML = 'Favorites';
                 		break;
                 	case 'tvshows':
-                		btnNextUp.innerHTML = 'NextUp';
+                		btnSub1.innerHTML = 'Genres';
+                		btnSub2.innerHTML = 'Upcoming';
+                		btnSub3.innerHTML = 'Favorites';
                 		break;
+                	case 'music':
+                		btnSub1.innerHTML = 'Genres';
+                		btnSub2.innerHTML = 'Artist';
+                		btnSub3.innerHTML = 'Favorites';
+                		break;                		
                     default:
-                    	btnNextUp.innerHTML = '';
+                		btnSub1.innerHTML = '';
+                		btnSub2.innerHTML = '';
+                		btnSub3.innerHTML = '';                    
                 }
             }
         }, true);

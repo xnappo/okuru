@@ -132,6 +132,7 @@ define(['./spotlight', 'focusManager'], function (spotlight, focusManager) {
     function view(element, parentId, autoFocus) {
 
         var self = this;
+        var themeId = 'okuru';
 
         if (autoFocus) {
             focusManager.autoFocus(element);
@@ -145,21 +146,15 @@ define(['./spotlight', 'focusManager'], function (spotlight, focusManager) {
             loadLatest(element, parentId)
             ]);
         };
-
-        //loadSpotlight(element, parentId);
-        //loadImages(element, parentId);
-
-        //element.querySelector('.allSeriesCard').addEventListener('click', function () {
-        //    Emby.Page.show(Emby.PluginManager.mapPath(themeId, 'tv/tv.html?parentid=' + parentId));
-        //});
-
-        //element.querySelector('.tvUpcomingCard').addEventListener('click', function () {
-        //    Emby.Page.show(Emby.PluginManager.mapPath(themeId, 'tv/tv.html?tab=upcoming&parentid=' + parentId));
-        //});
-
-        //element.querySelector('.tvFavoritesCard').addEventListener('click', function () {
-        //    Emby.Page.show(Emby.PluginManager.mapPath(themeId, 'tv/tv.html?tab=favorites&parentid=' + parentId));
-        //});
+        document.querySelector('.btnSub1').addEventListener('click', function () {
+              Emby.Page.show(Emby.PluginManager.mapRoute(themeId, 'tv/tv.html?tab=genres&parentid=' + parentId));
+        });
+        document.querySelector('.btnSub2').addEventListener('click', function () {
+              Emby.Page.show(Emby.PluginManager.mapRoute(themeId, 'tv/tv.html?tab=upcoming&parentid=' + parentId));
+        });
+        document.querySelector('.btnSub3').addEventListener('click', function () {
+              Emby.Page.show(Emby.PluginManager.mapRoute(themeId, 'tv/tv.html?tab=favorites&parentid=' + parentId));
+        });
 
         self.destroy = function () {
 

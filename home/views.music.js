@@ -213,6 +213,7 @@ define([], function () {
 
     function view(element, parentId, autoFocus) {
         var self = this;
+        var themeId = 'okuru';
 
         if (autoFocus) {
             Emby.FocusManager.autoFocus(element, true);
@@ -234,7 +235,15 @@ define([], function () {
                 loadFavoriteArtists(element, parentId)
             ]);
         };
-
+        document.querySelector('.btnSub1').addEventListener('click', function () {
+              Emby.Page.show(Emby.PluginManager.mapRoute(themeId, 'music/music.html?tab=genres&parentid=' + parentId));
+        });
+        document.querySelector('.btnSub2').addEventListener('click', function () {
+              Emby.Page.show(Emby.PluginManager.mapRoute(themeId, 'music/music.html?tab=artists&parentid=' + parentId));
+        });
+        document.querySelector('.btnSub3').addEventListener('click', function () {
+              Emby.Page.show(Emby.PluginManager.mapRoute(themeId, 'music/music.html?tab=favorites&parentid=' + parentId));
+        });
         //element.querySelector('.artistsCard').addEventListener('click', function () {
         //    gotoMusicView('albumartists', parentId);
         //});

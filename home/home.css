@@ -41,7 +41,7 @@
     background-image: url(../css/images/menu_trans.png);
 }
 
-.btnFavorites {
+.btnSub1 {
 	margin-left: 35%;
 	border-radius: 1px;
 	vertical-align: middle;
@@ -55,7 +55,7 @@
     line-height: .5vh;
 }
 
-.btnNextUp {
+.btnSub2 {
 	margin-left: 5%;
 	margin-top: 0;
 	margin-bottom: 0;
@@ -67,7 +67,7 @@
     line-height: .5vh;
 }
 
-.btnLatest{
+.btnSub3{
 	margin-left: 5%;
 	margin-top: 0;
 	margin-bottom: 0;
