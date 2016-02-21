@@ -51,28 +51,6 @@ define(['./spotlight', 'imageLoader', 'focusManager', './../components/backdrop'
         });
     }
 
-    function loadSpotlight(element, parentId) {
-
-        var options = {
-
-            SortBy: "Random",
-            IncludeItemTypes: "Movie",
-            Limit: 20,
-            Recursive: true,
-            ParentId: parentId,
-            EnableImageTypes: "Backdrop",
-            ImageTypes: "Backdrop",
-            Fields: "Taglines"
-        };
-
-        return Emby.Models.items(options).then(function (result) {
-
-            var card = element.querySelector('.wideSpotlightCard');
-
-            new spotlight(card, result.Items, 767);
-        });
-    }
-
     function loadRecommendations(element, parentId) {
 
         return Emby.Models.movieRecommendations({

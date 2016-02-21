@@ -1,4 +1,4 @@
-define(['./spotlight', 'focusManager'], function (spotlight, focusManager) {
+define(['./spotlight', 'focusManager', './../components/backdrop'], function (spotlight, focusManager, themeBackdrop) {
 
     function loadResume(element, parentId) {
 
@@ -35,7 +35,8 @@ define(['./spotlight', 'focusManager'], function (spotlight, focusManager) {
         };
 
         return Emby.Models.nextUp(options).then(function (result) {
-
+            var item = result[0];
+        	//themeBackdrop.setBackdrops([item]);
             var section = element.querySelector('.nextUpSection');
 
             Okuru.CardBuilder.buildCards(result.Items, {
@@ -63,7 +64,8 @@ define(['./spotlight', 'focusManager'], function (spotlight, focusManager) {
         };
 
         return Emby.Models.latestItems(options).then(function (result) {
-
+            var item = result[0];
+        	themeBackdrop.setBackdrops([item]);
             var section = element.querySelector('.latestSection');
 
             Okuru.CardBuilder.buildCards(result, {
@@ -75,27 +77,6 @@ define(['./spotlight', 'focusManager'], function (spotlight, focusManager) {
                 preferThumb: true,
                 showGroupCount: true
             });
-        });
-    }
-
-    function loadSpotlight(element, parentId) {
-
-        var options = {
-
-            SortBy: "Random",
-            IncludeItemTypes: "Series",
-            Limit: 20,
-            Recursive: true,
-            ParentId: parentId,
-            EnableImageTypes: "Backdrop",
-            ImageTypes: "Backdrop"
-        };
-
-        return Emby.Models.items(options).then(function (result) {
-
-            var card = element.querySelector('.wideSpotlightCard');
-
-            new spotlight(card, result.Items, 767);
         });
     }
 
@@ -128,7 +109,33 @@ define(['./spotlight', 'focusManager'], function (spotlight, focusManager) {
             }
         });
     }
+    function addEventListeners() {
+        var latestSection = document.querySelector('.latestSection');
+        latestSection.addEventListener('focus', function (e) {
+            var elem = Emby.Dom.parentWithClass(e.target, 'itemAction');
+            var itemId = elem.getAttribute('data-id');
 
+            console.log('.latestItem .itemAction | Focus detected | Item ID', itemId);
+
+            Emby.Models.item(itemId).then(function (item) {
+                console.log('Emby.Models.item(itemId)', item);
+                themeBackdrop.setBackdrops([item]);
+            });
+        }, true);
+        
+        var nextUpSection = document.querySelector('.nextUpSection');
+        nextUpSection.addEventListener('focus', function (e) {
+            var elem = Emby.Dom.parentWithClass(e.target, 'itemAction');
+            var itemId = elem.getAttribute('data-id');
+
+            console.log('.nextUpSection .itemAction | Focus detected | Item ID', itemId);
+
+            Emby.Models.item(itemId).then(function (item) {
+                console.log('Emby.Models.item(itemId)', item);
+                themeBackdrop.setBackdrops([item]);
+            });
+        }, true);        
+    }
     function view(element, parentId, autoFocus) {
 
         var self = this;
@@ -146,18 +153,32 @@ define(['./spotlight', 'focusManager'], function (spotlight, focusManager) {
             loadLatest(element, parentId)
             ]);
         };
-     /*  document.querySelector('.btnSub1').addEventListener('click', function () {
-        	  console.log('TVClick1');
-              Emby.Page.show(Emby.PluginManager.mapRoute(themeId, 'tv/tv.html?tab=genres&parentid=' + parentId));
-        });
-        document.querySelector('.btnSub2').addEventListener('click', function () {
-              Emby.Page.show(Emby.PluginManager.mapRoute(themeId, 'tv/tv.html?tab=upcoming&parentid=' + parentId));
-              console.log('TVClick2');
-        });
-        document.querySelector('.btnSub3').addEventListener('click', function () {
-              Emby.Page.show(Emby.PluginManager.mapRoute(themeId, 'tv/tv.html?tab=favorites&parentid=' + parentId));
-              console.log('TVClick3');
-        });*/
+
+        var latestSection = document.querySelector('.latestSection');
+        latestSection.addEventListener('focus', function (e) {
+            var elem = Emby.Dom.parentWithClass(e.target, 'itemAction');
+            var itemId = elem.getAttribute('data-id');
+
+            console.log('.latestItem .itemAction | Focus detected | Item ID', itemId);
+
+            Emby.Models.item(itemId).then(function (item) {
+                console.log('Emby.Models.item(itemId)', item);
+                themeBackdrop.setBackdrops([item]);
+            });
+        }, true);        
+        
+        var nextUpSection = document.querySelector('.nextUpSection');
+        nextUpSection.addEventListener('focus', function (e) {
+            var elem = Emby.Dom.parentWithClass(e.target, 'itemAction');
+            var itemId = elem.getAttribute('data-id');
+
+            console.log('.nextUpItem .itemAction | Focus detected | Item ID', itemId);
+
+            Emby.Models.item(itemId).then(function (item) {
+                console.log('Emby.Models.item(itemId)', item);
+                themeBackdrop.setBackdrops([item]);
+            });
+        }, true);                
 
         self.destroy = function () {
 
