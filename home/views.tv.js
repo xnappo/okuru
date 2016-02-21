@@ -146,15 +146,18 @@ define(['./spotlight', 'focusManager'], function (spotlight, focusManager) {
             loadLatest(element, parentId)
             ]);
         };
-        document.querySelector('.btnSub1').addEventListener('click', function () {
+     /*  document.querySelector('.btnSub1').addEventListener('click', function () {
+        	  console.log('TVClick1');
               Emby.Page.show(Emby.PluginManager.mapRoute(themeId, 'tv/tv.html?tab=genres&parentid=' + parentId));
         });
         document.querySelector('.btnSub2').addEventListener('click', function () {
               Emby.Page.show(Emby.PluginManager.mapRoute(themeId, 'tv/tv.html?tab=upcoming&parentid=' + parentId));
+              console.log('TVClick2');
         });
         document.querySelector('.btnSub3').addEventListener('click', function () {
               Emby.Page.show(Emby.PluginManager.mapRoute(themeId, 'tv/tv.html?tab=favorites&parentid=' + parentId));
-        });
+              console.log('TVClick3');
+        });*/
 
         self.destroy = function () {
 

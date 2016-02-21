@@ -168,13 +168,13 @@ define(['./spotlight', 'imageLoader', 'focusManager'], function (spotlight, imag
                 maxWidth: 240
             };
 
-            if (items.length > 0) {
-                element.querySelector('.movieFavoritesCard .cardImage').style.backgroundImage = "url('" + Emby.Models.backdropImageUrl(items[0], imgOptions) + "')";
-            }
+            //if (items.length > 0) {
+            //    element.querySelector('.movieFavoritesCard .cardImage').style.backgroundImage = "url('" + Emby.Models.backdropImageUrl(items[0], imgOptions) + "')";
+           // }
 
-            if (items.length > 1) {
-                element.querySelector('.allMoviesCard .cardImage').style.backgroundImage = "url('" + Emby.Models.backdropImageUrl(items[1], imgOptions) + "')";
-            }
+            //if (items.length > 1) {
+            //    element.querySelector('.allMoviesCard .cardImage').style.backgroundImage = "url('" + Emby.Models.backdropImageUrl(items[1], imgOptions) + "')";
+           // }
         });
     }
 
@@ -205,15 +205,18 @@ define(['./spotlight', 'imageLoader', 'focusManager'], function (spotlight, imag
         //element.querySelector('.allMoviesCard').addEventListener('click', function () {
         //    Emby.Page.show(Emby.PluginManager.mapPath(themeId, 'movies/movies.html?parentid=' + parentId));
         //});
-        document.querySelector('.btnSub1').addEventListener('click', function () {
+   /*     document.querySelector('.btnSub1').addEventListener('click', function () {
               Emby.Page.show(Emby.PluginManager.mapRoute(themeId, 'movies/movies.html?tab=genres&parentid=' + parentId));
+              console.log('MovieClick1');
         });
         document.querySelector('.btnSub2').addEventListener('click', function () {
               Emby.Page.show(Emby.PluginManager.mapRoute(themeId, 'movies/movies.html?tab=unwatched&parentid=' + parentId));
+              console.log('MovieClick2');
         });
         document.querySelector('.btnSub3').addEventListener('click', function () {
               Emby.Page.show(Emby.PluginManager.mapRoute(themeId, 'movies/movies.html?tab=favorites&parentid=' + parentId));
-        });
+              console.log('MovieClick3');
+        });*/
 
 
         self.destroy = function () {

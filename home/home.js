@@ -123,12 +123,13 @@ define(['loading', './../components/tabbedpage', './../components/backdrop', 'fo
 
             Emby.Models.userViews().then(function (result) {
 
-                var tabbedPageInstance = new tabbedPage(view, {
+                console.log('Here: ' + result.Items.concat(result.Items))
+            	var tabbedPageInstance = new tabbedPage(view, {
                     handleFocus: true,
                     immediateSpeed: 100
                 });
                 tabbedPageInstance.loadViewContent = loadViewContent;
-                tabbedPageInstance.renderTabs(result.Items);
+                tabbedPageInstance.renderTabs(result.Items.concat(result.Items.concat(result.Items.concat(result.Items.concat(result.Items.concat(result.Items))))));
                 pageInstance.tabbedPage = tabbedPageInstance;
             });
         }
