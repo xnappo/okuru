@@ -12,12 +12,12 @@ a {
 }
 
     .themeContainer.withBackdrop {
-        background-color: rgba(6, 6, 6, .3);
+        background-color: rgba(6, 6, 6, .4);
         transition: background-color 1000ms ease-out;
     }
 
         .themeContainer.withBackdrop.detailBackdrop {
-            background-color: rgba(6, 6, 6, .3);
+            background-color: rgba(6, 6, 6, .4);
         }
 
 .headerLogo {
