@@ -1,4 +1,4 @@
-define(['./spotlight', 'imageLoader', 'focusManager'], function (spotlight, imageLoader, focusManager) {
+define(['./spotlight', 'imageLoader', 'focusManager', './../components/backdrop'], function (spotlight, imageLoader, focusManager, themeBackdrop) {
 
     var themeId = 'okuru';
 	
@@ -13,7 +13,7 @@ define(['./spotlight', 'imageLoader', 'focusManager'], function (spotlight, imag
         };
 
         return Emby.Models.resumable(options).then(function (result) {
-
+            var item = result[0];  		
             var resumeSection = element.querySelector('.resumeSection');
 
             Okuru.CardBuilder.buildCards(result.Items, {
@@ -28,7 +28,6 @@ define(['./spotlight', 'imageLoader', 'focusManager'], function (spotlight, imag
     }
 
     function loadLatest(element, parentId) {
-
         var options = {
 
             IncludeItemTypes: "Movie",
@@ -38,12 +37,13 @@ define(['./spotlight', 'imageLoader', 'focusManager'], function (spotlight, imag
         };
 
         return Emby.Models.latestItems(options).then(function (result) {
-
-            var resumeSection = element.querySelector('.latestSection');
+            var item = result[0];
+        	themeBackdrop.setBackdrops([item]);
+            var latestSection = element.querySelector('.latestSection');
 
             Okuru.CardBuilder.buildCards(result, {
-                parentContainer: resumeSection,
-                itemsContainer: resumeSection.querySelector('.itemsContainer'),
+                parentContainer: latestSection,
+                itemsContainer: latestSection.querySelector('.itemsContainer'),
                 shape: 'portraitCard',
                 rows: 1,
                 width: Okuru.CardBuilder.homePortraitWidth
@@ -168,16 +168,42 @@ define(['./spotlight', 'imageLoader', 'focusManager'], function (spotlight, imag
                 maxWidth: 240
             };
 
-            //if (items.length > 0) {
-            //    element.querySelector('.movieFavoritesCard .cardImage').style.backgroundImage = "url('" + Emby.Models.backdropImageUrl(items[0], imgOptions) + "')";
-           // }
+            if (items.length > 0) {
+                element.querySelector('.movieFavoritesCard .cardImage').style.backgroundImage = "url('" + Emby.Models.backdropImageUrl(items[0], imgOptions) + "')";
+            }
 
-            //if (items.length > 1) {
-            //    element.querySelector('.allMoviesCard .cardImage').style.backgroundImage = "url('" + Emby.Models.backdropImageUrl(items[1], imgOptions) + "')";
-           // }
+            if (items.length > 1) {
+                element.querySelector('.allMoviesCard .cardImage').style.backgroundImage = "url('" + Emby.Models.backdropImageUrl(items[1], imgOptions) + "')";
+            }
         });
     }
+    function addEventListeners() {
+        var latestSection = document.querySelector('.latestSection');
+        latestSection.addEventListener('focus', function (e) {
+            var elem = Emby.Dom.parentWithClass(e.target, 'itemAction');
+            var itemId = elem.getAttribute('data-id');
 
+            console.log('.latestItem .itemAction | Focus detected | Item ID', itemId);
+
+            Emby.Models.item(itemId).then(function (item) {
+                console.log('Emby.Models.item(itemId)', item);
+                themeBackdrop.setBackdrops([item]);
+            });
+        }, true);
+        
+        var resumeSection = document.querySelector('.resumeSection');
+        resumeSection.addEventListener('focus', function (e) {
+            var elem = Emby.Dom.parentWithClass(e.target, 'itemAction');
+            var itemId = elem.getAttribute('data-id');
+
+            console.log('.resumeItem .itemAction | Focus detected | Item ID', itemId);
+
+            Emby.Models.item(itemId).then(function (item) {
+                console.log('Emby.Models.item(itemId)', item);
+                themeBackdrop.setBackdrops([item]);
+            });
+        }, true);        
+    }
     function view(element, parentId, autoFocus) {
 
         var self = this;
@@ -199,25 +225,35 @@ define(['./spotlight', 'imageLoader', 'focusManager'], function (spotlight, imag
 
             return promises;
         };
-        //loadSpotlight(element, parentId);
-        //loadImages(element, parentId);
+        
+        loadImages(element, parentId);
+        addEventListeners();
+        
+        var latestSection = document.querySelector('.latestSection');
+        latestSection.addEventListener('focus', function (e) {
+            var elem = Emby.Dom.parentWithClass(e.target, 'itemAction');
+            var itemId = elem.getAttribute('data-id');
 
-        //element.querySelector('.allMoviesCard').addEventListener('click', function () {
-        //    Emby.Page.show(Emby.PluginManager.mapPath(themeId, 'movies/movies.html?parentid=' + parentId));
-        //});
-   /*     document.querySelector('.btnSub1').addEventListener('click', function () {
-              Emby.Page.show(Emby.PluginManager.mapRoute(themeId, 'movies/movies.html?tab=genres&parentid=' + parentId));
-              console.log('MovieClick1');
-        });
-        document.querySelector('.btnSub2').addEventListener('click', function () {
-              Emby.Page.show(Emby.PluginManager.mapRoute(themeId, 'movies/movies.html?tab=unwatched&parentid=' + parentId));
-              console.log('MovieClick2');
-        });
-        document.querySelector('.btnSub3').addEventListener('click', function () {
-              Emby.Page.show(Emby.PluginManager.mapRoute(themeId, 'movies/movies.html?tab=favorites&parentid=' + parentId));
-              console.log('MovieClick3');
-        });*/
+            console.log('.latestItem .itemAction | Focus detected | Item ID', itemId);
 
+            Emby.Models.item(itemId).then(function (item) {
+                console.log('Emby.Models.item(itemId)', item);
+                themeBackdrop.setBackdrops([item]);
+            });
+        }, true);        
+        
+        var resumeSection = document.querySelector('.resumeSection');
+        resumeSection.addEventListener('focus', function (e) {
+            var elem = Emby.Dom.parentWithClass(e.target, 'itemAction');
+            var itemId = elem.getAttribute('data-id');
+
+            console.log('.resumeItem .itemAction | Focus detected | Item ID', itemId);
+
+            Emby.Models.item(itemId).then(function (item) {
+                console.log('Emby.Models.item(itemId)', item);
+                themeBackdrop.setBackdrops([item]);
+            });
+        }, true);                
 
         self.destroy = function () {
 
