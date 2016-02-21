@@ -235,29 +235,6 @@ define([], function () {
                 loadFavoriteArtists(element, parentId)
             ]);
         };
-     /*   document.querySelector('.btnSub1').addEventListener('click', function () {
-              Emby.Page.show(Emby.PluginManager.mapRoute(themeId, 'music/music.html?tab=genres&parentid=' + parentId));
-              console.log('MusicClick1');
-        });
-        document.querySelector('.btnSub2').addEventListener('click', function () {
-              Emby.Page.show(Emby.PluginManager.mapRoute(themeId, 'music/music.html?tab=artists&parentid=' + parentId));
-              console.log('MusicClick2');
-        });
-        document.querySelector('.btnSub3').addEventListener('click', function () {
-              Emby.Page.show(Emby.PluginManager.mapRoute(themeId, 'music/music.html?tab=favorites&parentid=' + parentId));
-              console.log('MusicClick3');
-        });*/
-        //element.querySelector('.artistsCard').addEventListener('click', function () {
-        //    gotoMusicView('albumartists', parentId);
-        //});
-
-        //element.querySelector('.albumsCard').addEventListener('click', function () {
-        //    gotoMusicView('albums', parentId);
-        //});
-
-        //element.querySelector('.genresCard').addEventListener('click', function () {
-        //    gotoMusicView('genres', parentId);
-        //});
 
         self.destroy = function () {
 
