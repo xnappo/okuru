@@ -1,4 +1,4 @@
-define(['playbackManager', 'pluginManager'], function (playbackManager, pluginManager) {
+define(['playbackManager', 'pluginManager', './themeinfo.js'], function (playbackManager, pluginManager, themeInfo) {
 
     function updateClock() {
 
@@ -31,9 +31,9 @@ define(['playbackManager', 'pluginManager'], function (playbackManager, pluginMa
 
         var self = this;
 
-        self.name = 'Okuru';
+        self.name = themeInfo.name;
         self.type = 'theme';
-        self.id = 'okuru';
+        self.id = themeInfo.id;
 		var settingsObjectName = self.id + 'Settings';
 
         var dependencyPrefix = self.id;
@@ -277,21 +277,23 @@ define(['playbackManager', 'pluginManager'], function (playbackManager, pluginMa
 
         self.showUserMenu = function () {
 
-            // For now just go cheap
-            showBackMenuInternal(function () { }, true);
+            // For now just go cheap and re-use the back menu
+            showBackMenuInternal(true);
         };
 
-        self.showBackMenu = function (callback) {
+        self.showBackMenu = function () {
 
-            showBackMenuInternal(callback, false);
+            return showBackMenuInternal(false);
         };
 
-        function showBackMenuInternal(callback, showHome) {
+        function showBackMenuInternal(showHome) {
 
-            require([pluginManager.mapPath(self, 'backmenu/backmenu.js')], function (showBackMenu) {
+            return new Promise(function (resolve, reject) {
+
+                require(['backMenu'], function (showBackMenu) {
                 showBackMenu({
-                    callback: callback,
                     showHome: showHome
+                    }).then(resolve);
                 });
             });
         }
