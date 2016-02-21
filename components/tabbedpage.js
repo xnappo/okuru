@@ -3,6 +3,7 @@ define(['loading', 'slyScroller', './focushandler', 'focusManager','inputManager
     var btnSub1Target;
     var btnSub2Target;
     var btnSub3Target;
+    var subMenuInit = false;
     inputManager.on(window, onInputCommand);
     
     function createHeaderScroller(view, instance, initialTabId) {
@@ -54,11 +55,10 @@ define(['loading', 'slyScroller', './focushandler', 'focusManager','inputManager
         if (elem) {
         	switch (e.detail.command) {
             	 case 'down':
-            	 	 console.log("down");
             	 	 setTimeout(function () {
             	 	 		 focusManager.autoFocus(subMenu);
             	 	 }, 0);
-            	 break;
+            	 	 break;
             }
 		}
 				
@@ -151,7 +151,7 @@ define(['loading', 'slyScroller', './focushandler', 'focusManager','inputManager
                 }
             }
        }, true);
-        
+        if (!subMenuInit) {
         document.querySelector('.btnSub1').addEventListener('click', function () {
                Emby.Page.show(btnSub1Target);
         });
@@ -160,7 +160,9 @@ define(['loading', 'slyScroller', './focushandler', 'focusManager','inputManager
         });
         document.querySelector('.btnSub3').addEventListener('click', function () {
                Emby.Page.show(btnSub3Target);
-        });        
+        });
+        subMenuInit=true;
+        }
     }
 
     function selectUserView(page, id, self) {
