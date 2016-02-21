@@ -146,15 +146,15 @@ define(['imageLoader', 'itemHelper', './backdrop', 'mediaInfo', 'focusManager'],
                 return;
             }
 
-            if (options.enableBackdrops !== false || selectedItemInfoInner) {
+           // if (options.enableBackdrops !== false || selectedItemInfoInner) {
                 Emby.Models.item(id).then(function (item) {
 
-                    if (options.enableBackdrops) {
+                    //if (options.enableBackdrops) {
                         themeBackdrop.setBackdrops([item], true);
-                    }
+                    //}
                     setSelectedInfo(card, item);
                 });
-            }
+           // }
         }
 
         function setSelectedInfo(card, item) {

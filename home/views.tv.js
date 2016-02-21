@@ -119,7 +119,7 @@ define(['./spotlight', 'focusManager', './../components/backdrop'], function (sp
 
             Emby.Models.item(itemId).then(function (item) {
                 console.log('Emby.Models.item(itemId)', item);
-                themeBackdrop.setBackdrops([item]);
+               // themeBackdrop.setBackdrops([item]);
             });
         }, true);
         
@@ -132,7 +132,7 @@ define(['./spotlight', 'focusManager', './../components/backdrop'], function (sp
 
             Emby.Models.item(itemId).then(function (item) {
                 console.log('Emby.Models.item(itemId)', item);
-                themeBackdrop.setBackdrops([item]);
+                //themeBackdrop.setBackdrops([item]);
             });
         }, true);        
     }
@@ -176,7 +176,7 @@ define(['./spotlight', 'focusManager', './../components/backdrop'], function (sp
 
             Emby.Models.item(itemId).then(function (item) {
                 console.log('Emby.Models.item(itemId)', item);
-                themeBackdrop.setBackdrops([item]);
+               // themeBackdrop.setBackdrops([item]);
             });
         }, true);                
 
