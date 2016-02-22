@@ -216,7 +216,7 @@ define(['./spotlight', 'imageLoader', 'focusManager', './../components/backdrop'
 
             Emby.Models.item(itemId).then(function (item) {
                 console.log('Emby.Models.item(itemId)', item);
-                themeBackdrop.setBackdrops([item]);
+                //themeBackdrop.setBackdrops([item]);
             });
         }, true);        
         
