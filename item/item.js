@@ -1,5 +1,5 @@
-define(['loading', 'datetime', 'playbackManager', 'imageLoader', 'userdataButtons', 'itemHelper', './../components/focushandler', './../components/backdrop', './../components/listview', 'mediaInfo', 'focusManager', './../themesettings'],
-    function (loading, datetime, playbackManager, imageLoader, userdataButtons, itemHelper, focusHandler, themeBackdrop, listview, mediaInfo, focusManager, themeSettings) {
+define(['loading', 'datetime', 'playbackManager', 'imageLoader', 'userdataButtons', 'itemHelper', './../components/focushandler', './../components/backdrop', './../components/listview', 'mediaInfo', 'itemShortcuts', 'focusManager', './../themesettings'],
+    function (loading, datetime, playbackManager, imageLoader, userdataButtons, itemHelper, focusHandler, themeBackdrop, listview, mediaInfo, itemShortcuts, focusManager, themeSettings) {
 
         var themeId = 'okuru';
 		
@@ -490,6 +490,9 @@ define(['loading', 'datetime', 'playbackManager', 'imageLoader', 'userdataButton
                     enableSideMediaInfo: true
                 });
 
+                itemShortcuts.off(section);
+                itemShortcuts.on(section);
+
                 imageLoader.lazyChildren(section);
             };
 
@@ -771,6 +774,9 @@ define(['loading', 'datetime', 'playbackManager', 'imageLoader', 'userdataButton
                 });
 
                 imageLoader.lazyChildren(section);
+
+                itemShortcuts.off(section);
+                itemShortcuts.on(section);
 
                 // Sometimes this doesn't work without some delay after setting innerHTMl
                 setTimeout(function () {

@@ -1,4 +1,4 @@
-define(['./spotlight', 'imageLoader', 'focusManager', './../components/backdrop'], function (spotlight, imageLoader, focusManager, themeBackdrop) {
+define(['./spotlight', 'imageLoader', 'focusManager', './../components/backdrop', 'itemShortcuts'], function (spotlight, imageLoader, focusManager, themeBackdrop, itemShortcuts) {
 
     var themeId = 'okuru';
 	
