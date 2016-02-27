@@ -5,9 +5,9 @@ define(['loading', 'slyScroller', './focushandler', 'focusManager','inputManager
     var btnSub3Target;
     var subMenuInit = false;
     inputManager.on(window, onInputCommand);
-    
+
     function createHeaderScroller(view, instance, initialTabId) {
-        
+
     	var userViewNames = view.querySelector('.userViewNames');
 
         var scrollFrame = userViewNames.querySelector('.scrollFrame');
@@ -47,6 +47,19 @@ define(['loading', 'slyScroller', './focushandler', 'focusManager','inputManager
             instance.headerSlyFrame = slyFrame;
             instance.setFocusDelay(view, initialTab);
 
+            focusManager.autoFocus(userViewNames);
+
+            var viewNames = userViewNames.querySelectorAll('.btnUserViewHeader');
+            console.log('viewNames', viewNames);
+
+            var viewNamesLength = viewNames.length;
+            console.log('**viewNamesLength**', viewNamesLength);
+
+            var centerElement = viewNames[Math.round(viewNames.length / 2)];
+            console.log('centerElement', centerElement);
+
+            centerElement.focus();
+            slyFrame.toCenter(centerElement);
         });
     }
     function onInputCommand(e) {
@@ -61,11 +74,11 @@ define(['loading', 'slyScroller', './focushandler', 'focusManager','inputManager
             	 	 break;
             }
 		}
-				
+
     }
-    
+
     function initEvents(view, instance) {
-    	
+
         // Catch events on the view headers
         var btnFavorites = view.querySelector('.btnFavorites');
         var userViewNames = view.querySelector('.userViewNames');
@@ -88,16 +101,16 @@ define(['loading', 'slyScroller', './focushandler', 'focusManager','inputManager
                 instance.headerSlyFrame.toCenter(elem);
                 instance.setFocusDelay(view, elem);
             }
-            
+
             if (viewType) {
             	switch(viewType) {
-                	case 'movies':            
+                	case 'movies':
                 		btnSub1.innerHTML = 'Genres';
                 		btnSub1Target = Emby.PluginManager.mapRoute(themeId, 'movies/movies.html?tab=genres&parentid=' + viewId);
                 		btnSub2.innerHTML = 'Unwatched';
                 	    btnSub2Target = Emby.PluginManager.mapRoute(themeId, 'movies/movies.html?tab=unwatched&parentid=' + viewId);
                 		btnSub3.innerHTML = 'Favorites';
-                		btnSub3Target = Emby.PluginManager.mapRoute(themeId, 'movies/movies.html?tab=favorites&parentid=' + viewId);                		
+                		btnSub3Target = Emby.PluginManager.mapRoute(themeId, 'movies/movies.html?tab=favorites&parentid=' + viewId);
                 		break;
                 	case 'tvshows':
                 		btnSub1.innerHTML = 'Genres';
@@ -109,20 +122,20 @@ define(['loading', 'slyScroller', './focushandler', 'focusManager','inputManager
                 		break;
                 	case 'music':
                 		btnSub1.innerHTML = 'Genres';
-                		btnSub1Target = Emby.PluginManager.mapRoute(themeId, 'music/music.html?tab=genres&parentid=' + viewId);                		
+                		btnSub1Target = Emby.PluginManager.mapRoute(themeId, 'music/music.html?tab=genres&parentid=' + viewId);
                 		btnSub2.innerHTML = 'Artist';
-                		btnSub2Target = Emby.PluginManager.mapRoute(themeId, 'music/music.html?tab=artists&parentid=' + viewId);     
+                		btnSub2Target = Emby.PluginManager.mapRoute(themeId, 'music/music.html?tab=artists&parentid=' + viewId);
                 		btnSub3.innerHTML = 'Favorites';
-                		btnSub3Target = Emby.PluginManager.mapRoute(themeId, 'music/music.html?tab=favorites&parentid=' + viewId);     
-                		break;                		
+                		btnSub3Target = Emby.PluginManager.mapRoute(themeId, 'music/music.html?tab=favorites&parentid=' + viewId);
+                		break;
                     default:
                 		btnSub1.innerHTML = '';
                 		btnSub2.innerHTML = '';
-                		btnSub3.innerHTML = '';                    
+                		btnSub3.innerHTML = '';
                 }
             }
         }, true);
-        
+
         userViewNames.addEventListener('click', function (e) {
             var elem = Emby.Dom.parentWithClass(e.target, 'btnUserViewHeader');
             if (elem) {
@@ -130,21 +143,21 @@ define(['loading', 'slyScroller', './focushandler', 'focusManager','inputManager
                 var viewType = elem.getAttribute('data-type');
                 if (viewType) {
                     switch(viewType) {
-                	    case 'movies':                	
+                	    case 'movies':
                 	        Emby.Page.show(Emby.PluginManager.mapRoute(themeId, 'movies/movies.html?parentid=' + viewId));
                 	        break;
-                	    case 'tvshows':                	
+                	    case 'tvshows':
                 	        Emby.Page.show(Emby.PluginManager.mapRoute(themeId, 'tv/tv.html?parentid=' + viewId));
                 	        break;
-                	    case 'music':                	
+                	    case 'music':
                 	        Emby.Page.show(Emby.PluginManager.mapRoute(themeId, 'music/music.html?parentid=' + viewId));
                 	        break;
-                	    case 'homevideos':                	
+                	    case 'homevideos':
                 	        Emby.Page.show(Emby.PluginManager.mapRoute(themeId, 'list/list.html?parentid=' + viewId));
                 	        break;
-                	    case 'folders':                	
+                	    case 'folders':
                 	        Emby.Page.show(Emby.PluginManager.mapRoute(themeId, 'list/list.html?parentid=' + viewId));
-                	        break;                	    
+                	        break;
                 	    default:
                 		    Emby.Page.show(Emby.PluginManager.mapRoute(themeId, 'list/list.html?parentid=' + viewId));
                 	}
