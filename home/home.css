@@ -30,7 +30,7 @@
     color: #aaa;
     display: block;
     position: absolute;
-    top: 51.75%;
+    top: 52%;
     margin-left: auto;
     margin-right: auto;
     height: 2.5vh;
@@ -109,7 +109,7 @@
     text-transform: none !important;
     margin-top: 0;
     padding-top: 0;
-    padding-bottom: .2em;
+    padding-bottom: .5em;
  
     font-size: 200%;
 
