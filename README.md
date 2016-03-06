@@ -1,5 +1,5 @@
 # okuru
-Okuru theme for Emby Theater
+Okuru skin for Emby Theater
 
 Installation
 

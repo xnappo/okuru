@@ -1,6 +1,6 @@
-define(['./spotlight', 'imageLoader', 'focusManager', './../components/backdrop', 'itemShortcuts'], function (spotlight, imageLoader, focusManager, themeBackdrop, itemShortcuts) {
+define(['./spotlight', 'imageLoader', 'focusManager', './../components/backdrop', 'itemShortcuts'], function (spotlight, imageLoader, focusManager, skinBackdrop, itemShortcuts) {
 
-    var themeId = 'okuru';
+    var skinId = 'okuru';
 	
     function loadResume(element, parentId) {
 
@@ -38,7 +38,7 @@ define(['./spotlight', 'imageLoader', 'focusManager', './../components/backdrop'
 
         return Emby.Models.latestItems(options).then(function (result) {
             var item = result[0];
-        	themeBackdrop.setBackdrops([item]);
+        	skinBackdrop.setBackdrops([item]);
             var latestSection = element.querySelector('.latestSection');
 
             Okuru.CardBuilder.buildCards(result, {
@@ -165,7 +165,7 @@ define(['./spotlight', 'imageLoader', 'focusManager', './../components/backdrop'
 
             Emby.Models.item(itemId).then(function (item) {
                 console.log('Emby.Models.item(itemId)', item);
-                //themeBackdrop.setBackdrops([item]);
+                //skinBackdrop.setBackdrops([item]);
             });
         }, true);
         
@@ -178,14 +178,14 @@ define(['./spotlight', 'imageLoader', 'focusManager', './../components/backdrop'
 
             Emby.Models.item(itemId).then(function (item) {
                 console.log('Emby.Models.item(itemId)', item);
-                //themeBackdrop.setBackdrops([item]);
+                //skinBackdrop.setBackdrops([item]);
             });
         }, true);        
     }
     function view(element, parentId, autoFocus) {
 
         var self = this;
-        var themeId = 'okuru';
+        var skinId = 'okuru';
         if (autoFocus) {
             focusManager.autoFocus(element);
         }
@@ -216,7 +216,7 @@ define(['./spotlight', 'imageLoader', 'focusManager', './../components/backdrop'
 
             Emby.Models.item(itemId).then(function (item) {
                 console.log('Emby.Models.item(itemId)', item);
-                //themeBackdrop.setBackdrops([item]);
+                //skinBackdrop.setBackdrops([item]);
             });
         }, true);        
         
@@ -229,7 +229,7 @@ define(['./spotlight', 'imageLoader', 'focusManager', './../components/backdrop'
 
             Emby.Models.item(itemId).then(function (item) {
                 console.log('Emby.Models.item(itemId)', item);
-                //themeBackdrop.setBackdrops([item]);
+                //skinBackdrop.setBackdrops([item]);
             });
         }, true);                
 

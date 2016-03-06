@@ -1,4 +1,4 @@
-define(['./spotlight', 'focusManager', './../components/backdrop'], function (spotlight, focusManager, themeBackdrop) {
+define(['./spotlight', 'focusManager', './../components/backdrop'], function (spotlight, focusManager, skinBackdrop) {
 
     function loadResume(element, parentId) {
 
@@ -36,7 +36,7 @@ define(['./spotlight', 'focusManager', './../components/backdrop'], function (sp
 
         return Emby.Models.nextUp(options).then(function (result) {
             var item = result[0];
-        	//themeBackdrop.setBackdrops([item]);
+        	//skinBackdrop.setBackdrops([item]);
             var section = element.querySelector('.nextUpSection');
 
             Okuru.CardBuilder.buildCards(result.Items, {
@@ -65,7 +65,7 @@ define(['./spotlight', 'focusManager', './../components/backdrop'], function (sp
 
         return Emby.Models.latestItems(options).then(function (result) {
             var item = result[0];
-        	themeBackdrop.setBackdrops([item]);
+        	skinBackdrop.setBackdrops([item]);
             var section = element.querySelector('.latestSection');
 
             Okuru.CardBuilder.buildCards(result, {
@@ -119,7 +119,7 @@ define(['./spotlight', 'focusManager', './../components/backdrop'], function (sp
 
             Emby.Models.item(itemId).then(function (item) {
                 console.log('Emby.Models.item(itemId)', item);
-               // themeBackdrop.setBackdrops([item]);
+               // skinBackdrop.setBackdrops([item]);
             });
         }, true);
         
@@ -132,14 +132,14 @@ define(['./spotlight', 'focusManager', './../components/backdrop'], function (sp
 
             Emby.Models.item(itemId).then(function (item) {
                 console.log('Emby.Models.item(itemId)', item);
-                //themeBackdrop.setBackdrops([item]);
+                //skinBackdrop.setBackdrops([item]);
             });
         }, true);        
     }
     function view(element, parentId, autoFocus) {
 
         var self = this;
-        var themeId = 'okuru';
+        var skinId = 'okuru';
 
         if (autoFocus) {
             focusManager.autoFocus(element);
@@ -163,7 +163,7 @@ define(['./spotlight', 'focusManager', './../components/backdrop'], function (sp
 
             Emby.Models.item(itemId).then(function (item) {
                 console.log('Emby.Models.item(itemId)', item);
-                themeBackdrop.setBackdrops([item]);
+                skinBackdrop.setBackdrops([item]);
             });
         }, true);        
         
@@ -176,7 +176,7 @@ define(['./spotlight', 'focusManager', './../components/backdrop'], function (sp
 
             Emby.Models.item(itemId).then(function (item) {
                 console.log('Emby.Models.item(itemId)', item);
-               // themeBackdrop.setBackdrops([item]);
+               // skinBackdrop.setBackdrops([item]);
             });
         }, true);                
 

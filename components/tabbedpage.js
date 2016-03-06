@@ -1,5 +1,5 @@
 define(['loading', 'slyScroller', './focushandler', 'focusManager','inputManager'], function (loading, slyScroller, focusHandler, focusManager, inputManager) {
-    var themeId = 'okuru';
+    var skinId = 'okuru';
     var btnSub1Target;
     var btnSub2Target;
     var btnSub3Target;
@@ -106,27 +106,27 @@ define(['loading', 'slyScroller', './focushandler', 'focusManager','inputManager
             	switch(viewType) {
                 	case 'movies':
                 		btnSub1.innerHTML = 'Genres';
-                		btnSub1Target = Emby.PluginManager.mapRoute(themeId, 'movies/movies.html?tab=genres&parentid=' + viewId);
+                		btnSub1Target = Emby.PluginManager.mapRoute(skinId, 'movies/movies.html?tab=genres&parentid=' + viewId);
                 		btnSub2.innerHTML = 'Unwatched';
-                	    btnSub2Target = Emby.PluginManager.mapRoute(themeId, 'movies/movies.html?tab=unwatched&parentid=' + viewId);
+                	    btnSub2Target = Emby.PluginManager.mapRoute(skinId, 'movies/movies.html?tab=unwatched&parentid=' + viewId);
                 		btnSub3.innerHTML = 'Favorites';
-                		btnSub3Target = Emby.PluginManager.mapRoute(themeId, 'movies/movies.html?tab=favorites&parentid=' + viewId);
+                		btnSub3Target = Emby.PluginManager.mapRoute(skinId, 'movies/movies.html?tab=favorites&parentid=' + viewId);
                 		break;
                 	case 'tvshows':
                 		btnSub1.innerHTML = 'Genres';
-                		btnSub1Target = Emby.PluginManager.mapRoute(themeId, 'tv/tv.html?tab=genres&parentid=' + viewId);
+                		btnSub1Target = Emby.PluginManager.mapRoute(skinId, 'tv/tv.html?tab=genres&parentid=' + viewId);
                 		btnSub2.innerHTML = 'Upcoming';
-                		btnSub2Target = Emby.PluginManager.mapRoute(themeId, 'tv/tv.html?tab=upcoming&parentid=' + viewId);
+                		btnSub2Target = Emby.PluginManager.mapRoute(skinId, 'tv/tv.html?tab=upcoming&parentid=' + viewId);
                 		btnSub3.innerHTML = 'Favorites';
-                		btnSub3Target = Emby.PluginManager.mapRoute(themeId, 'tv/tv.html?tab=favorites&parentid=' + viewId);
+                		btnSub3Target = Emby.PluginManager.mapRoute(skinId, 'tv/tv.html?tab=favorites&parentid=' + viewId);
                 		break;
                 	case 'music':
                 		btnSub1.innerHTML = 'Genres';
-                		btnSub1Target = Emby.PluginManager.mapRoute(themeId, 'music/music.html?tab=genres&parentid=' + viewId);
+                		btnSub1Target = Emby.PluginManager.mapRoute(skinId, 'music/music.html?tab=genres&parentid=' + viewId);
                 		btnSub2.innerHTML = 'Artist';
-                		btnSub2Target = Emby.PluginManager.mapRoute(themeId, 'music/music.html?tab=artists&parentid=' + viewId);
+                		btnSub2Target = Emby.PluginManager.mapRoute(skinId, 'music/music.html?tab=artists&parentid=' + viewId);
                 		btnSub3.innerHTML = 'Favorites';
-                		btnSub3Target = Emby.PluginManager.mapRoute(themeId, 'music/music.html?tab=favorites&parentid=' + viewId);
+                		btnSub3Target = Emby.PluginManager.mapRoute(skinId, 'music/music.html?tab=favorites&parentid=' + viewId);
                 		break;
                     default:
                 		btnSub1.innerHTML = '';
@@ -144,22 +144,22 @@ define(['loading', 'slyScroller', './focushandler', 'focusManager','inputManager
                 if (viewType) {
                     switch(viewType) {
                 	    case 'movies':
-                	        Emby.Page.show(Emby.PluginManager.mapRoute(themeId, 'movies/movies.html?parentid=' + viewId));
+                	        Emby.Page.show(Emby.PluginManager.mapRoute(skinId, 'movies/movies.html?parentid=' + viewId));
                 	        break;
                 	    case 'tvshows':
-                	        Emby.Page.show(Emby.PluginManager.mapRoute(themeId, 'tv/tv.html?parentid=' + viewId));
+                	        Emby.Page.show(Emby.PluginManager.mapRoute(skinId, 'tv/tv.html?parentid=' + viewId));
                 	        break;
                 	    case 'music':
-                	        Emby.Page.show(Emby.PluginManager.mapRoute(themeId, 'music/music.html?parentid=' + viewId));
+                	        Emby.Page.show(Emby.PluginManager.mapRoute(skinId, 'music/music.html?parentid=' + viewId));
                 	        break;
                 	    case 'homevideos':
-                	        Emby.Page.show(Emby.PluginManager.mapRoute(themeId, 'list/list.html?parentid=' + viewId));
+                	        Emby.Page.show(Emby.PluginManager.mapRoute(skinId, 'list/list.html?parentid=' + viewId));
                 	        break;
                 	    case 'folders':
-                	        Emby.Page.show(Emby.PluginManager.mapRoute(themeId, 'list/list.html?parentid=' + viewId));
+                	        Emby.Page.show(Emby.PluginManager.mapRoute(skinId, 'list/list.html?parentid=' + viewId));
                 	        break;
                 	    default:
-                		    Emby.Page.show(Emby.PluginManager.mapRoute(themeId, 'list/list.html?parentid=' + viewId));
+                		    Emby.Page.show(Emby.PluginManager.mapRoute(skinId, 'list/list.html?parentid=' + viewId));
                 	}
                 }
             }

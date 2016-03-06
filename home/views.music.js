@@ -1,6 +1,6 @@
 define([], function () {
 
-    var themeId = 'okuru';
+    var skinId = 'okuru';
 	
 	function loadLatest(element, parentId) {
 
@@ -208,12 +208,12 @@ define([], function () {
 
     function gotoMusicView(tab, parentId) {
 
-        Emby.Page.show(Emby.PluginManager.mapRoute(themeId, 'music/music.html?tab=' + tab + "&parentid=" + parentId));
+        Emby.Page.show(Emby.PluginManager.mapRoute(skinId, 'music/music.html?tab=' + tab + "&parentid=" + parentId));
     }
 
     function view(element, parentId, autoFocus) {
         var self = this;
-        var themeId = 'okuru';
+        var skinId = 'okuru';
 
         if (autoFocus) {
             Emby.FocusManager.autoFocus(element, true);
