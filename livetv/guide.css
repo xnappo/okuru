@@ -117,7 +117,7 @@
 }
 
 .newsProgramInfo .programAccent {
-    background-color: #523378;
+    background-color: #6a9cb7;
 }
 
 .movieProgramInfo .programAccent {
@@ -336,7 +336,7 @@
 }
 
 .programCell:focus, .channelHeaderCell:focus, .btnSelectDate:focus {
-    background-color: #52B54B;
+    background-color: #6a9cb7;
     outline: none !important;
 }
 

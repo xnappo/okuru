@@ -3,64 +3,74 @@ html {
 }
 
 a {
-    color: #E7E7E7;
+    color: #6a9cb7;
     outline: none !important;
+    display: inline-block;
+    transition: all .15s ease-out;
 }
 
-.skinContainer {
-    background: #121212;
-}
-
-    .skinContainer.withBackdrop {
-        background-color: rgba(6, 6, 6, .4);
-        transition: background-color 1000ms ease-out;
+    a:focus {
+        background: #6a9cb7;
+        color: #fff;
+        transform: scale(1.16);
+        padding-left: .3em;
+        padding-right: .3em;
+        border-radius: .15em;
     }
 
-        .skinContainer.withBackdrop.detailBackdrop {
-            background-color: rgba(6, 6, 6, .4);
-        }
+    a:hover {
+        text-decoration: underline;
+    }
+
+.backgroundContainer {
+    background: #181818;
+}
+
+    .backgroundContainer.withBackdrop {
+        background: linear-gradient(rgba(6, 6, 6, .9), rgba(6, 6, 6, .6), rgba(6, 6, 6, .9));
+    }
 
 .headerLogo {
     background-image: url(images/logowhite.png);
 }
 
-.fieldDescription {
+.fieldDescription, .secondaryText {
     color: #aaa;
 }
 
-paper-input label, paper-checkbox label, emby-dropdown-menu label {
+.checkboxLabel, .selectLabelUnfocused {
     color: #bbb !important;
 }
 
-paper-input .focused-line {
-    background-color: #E7E7E7 !important;
+.inputLabel, .textareaLabelUnfocused {
+    color: #bbb;
 }
 
-.paperRaised, paper-button[raised] {
-    background: #404040;
+.checkboxOutline {
+    border-color: #bbb;
 }
 
-    .paperRaised:focus, paper-button[focused]:not(.btnUserViewHeader) {
-        /*background: #8e9294;*/
-        background: #6A9CB7;
-        color: #fff;
-    }
+.emby-button.raised {
+    background-color: rgba(170,170,190, .4);
+    color: #fff;
+}
 
-.cardFooter {
+.emby-button:focus:not(.btnUserViewHeader) {
+    background: #6a9cb7;
+    color: #fff;
+}
+
+.cardFooter:not(.cardFooter-round) {
     background-color: #333;
 }
 
-.cardText.dim {
-    color: #aaa;
-}
-
-.card[focused] .cardBox, .card:focus .cardBox {
-    border-color: #BCC6CC;
+.card:focus:not(.card-round) .cardBox {
+    border-color: #6a9cb7;
     /*border-color: rgba(0, 0, 0, .6);*/
 }
 
 .card[data-cardtype='embyconnect'] .cardImageContainer {
-    background-color: #BCC6CC;
+    background-color: #6a9cb7;
 }
 
 .headerBackButton {
@@ -68,22 +78,21 @@ paper-input .focused-line {
 }
 
 
-.userViewNames paper-button {
+.userViewNames button {
     opacity: .25;
 }
-
 
 .userViewButtonText {
     border-bottom: 2px solid transparent;
 }
 
-.userViewNames paper-button.selected {
-    color: #fff;
+.userViewNames button.selected {
+    color: inherit;
     opacity: 1;
 }
 
-paper-dialog {
-    background: rgba(28,28,28,.94) !important;
+.dialog {
+    background-color: rgba(20,20,20,1) !important;
     color: #fff !important;
 }
 
@@ -115,83 +124,33 @@ paper-dialog {
     color: #bbb !important;
 }
 
-.userViewNames paper-button[focused] {
-    color: #E7E7E7 !important;
-    text-decoration: none;
+.userViewNames button:focus {
+    color: #6a9cb7 !important;
     opacity: 1;
 }
 
-    .userViewNames paper-button[focused] .userViewButtonText {
-        border-bottom-color: #E7E7E7;
-        text-decoration: none;
+    .userViewNames button:focus .userViewButtonText {
+        border-bottom-color: #6a9cb7;
     }
 
-.defaultCardColor1 {
-    background-color: #009688;
+.userViewNames button:focus {
+    color: #6a9cb7 !important;
+    opacity: 1;
 }
 
-.defaultCardColor2 {
-    background-color: #D32F2F;
-}
-
-.defaultCardColor3 {
-    background-color: #0288D1;
-}
-
-.defaultCardColor4 {
-    background-color: #388E3C;
-}
-
-.defaultCardColor5 {
-    background-color: #F57F17;
-}
-
-paper-slider #progressContainer {
-    background-color: #666 !important;
-}
-
-paper-item-body [secondary] {
-    color: #999 !important;
-}
+    .userViewNames button:focus .userViewButtonText {
+        border-bottom-color: #6a9cb7;
+    }
 
 .selectedItemSecondaryInfo {
     color: #ddd !important;
 }
 
-.paperIconItemMediaInfo {
-    color: #bbb !important;
+.listItem:focus {
+    background-color: #333 !important;
+    border-radius: .25em;
 }
 
-paper-icon-item {
-    border: 1px solid transparent;
-}
-
-    paper-icon-item[focused] {
-        background-color: rgba(20,20,20,.90);
-        border: 1px solid #BCC6CC;
-        outline: none !important;
-    }
-
-    paper-icon-item:focus::before {
-        display: none;
-    }
-
-.btnUserData {
-    color: #aaa;
-}
-
-.btnUserDataOn {
-    color: #cc3333;
-}
-
-.tagline {
-    color: #FFEB3B;
-}
-
-paper-icon-button[disabled] {
-    color: #666 !important;
-}
-
-.sectionTitle {
-    color: #ccc;
+.listItemBody .secondary {
+    color: #999 !important;
 }

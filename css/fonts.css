@@ -1,28 +1,35 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:300,400,500,700);
-@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700);
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700);
-@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
-@import url(https://fonts.googleapis.com/css?family=Lato:300,400,700);
-@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700);
-@import url(https://fonts.googleapis.com/css?family=Varela+Round);
-@import url(https://fonts.googleapis.com/css?family=Josefin+Slab:400,300,600);
-
 html {
-    font-family: Open Sans, Roboto, Open Sans, Helvetica Neue, Open Sans, Source Sans Pro, Montserrat, Varela Round;
-    font-size: 2.5vh;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", 'Open Sans', sans-serif;
 }
 
-h1, h2 {
-    font-family: Open Sans, Helvetica Neue, Open Sans, Source Sans Pro, Montserrat, Varela Round;
+html {
+    font-size: 100%;
 }
 
 h1 {
-    font-size: 4.07vh;
-    font-weight: 300;
+    font-weight: normal;
 }
 
 h2 {
     font-weight: normal;
+}
+
+h3 {
+    font-weight: normal;
+}
+
+html.layout-tv {
+    font-size: 2.5vh;
+}
+
+.layout-tv h1 {
+    font-size: 4.07vh;
+}
+
+.layout-tv h2 {
     font-size: 3.3333vh;
-    font-weight: 300;
+}
+
+.layout-tv h3 {
+    font-size: 3vh;
 }

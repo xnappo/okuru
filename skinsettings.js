@@ -1,6 +1,7 @@
-define(['userSettings'], function (userSettings) {
+define(['userSettings', './skininfo'], function (userSettings, skininfo) {
+    'use strict';
 
-    var settingsPrefix = 'okuru-';
+    var settingsPrefix = skininfo.id + '-';
     var obj = function () {
 
         var self = this;
@@ -21,7 +22,7 @@ define(['userSettings'], function (userSettings) {
                 self.set('antispoilers', val.toString());
             }
 
-            return self.get('antispoilers') != 'false';
+            return self.get('antispoilers') !== 'false';
         };
 
         self.dimUnselectedPosters = function (val) {
